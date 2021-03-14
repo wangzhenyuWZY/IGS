@@ -165,7 +165,15 @@
                                                 href="https://tronscan.io/#/token20/TTSLeAmeyRWsRJfzwExQMM7EoS67nFnFUW"
                                                 target="_blank">InfinityStones </a></h4>
 
-                                                <p class="mbr-text mbr-fonts-style pt-3 display-4"><br>
+                                                <p class="mbr-text mbr-fonts-style col-right mbr-black align-center display-5">
+                                                    <br><strong>Start In<br></strong><span id="poolsupply">
+                                                        <font style="vertical-align: inherit;">
+                                                            <font style="vertical-align: inherit;">2021-03-16 09:00:00</font>
+                                                        </font>
+                                                    </span>
+                                                </p>
+
+                                                <p class="mbr-text mbr-fonts-style pt-3 display-4">
                                                     <strong>
                                                         <font style="vertical-align: inherit;">
                                                             <font style="vertical-align: inherit;">Pool Daily Reward &nbsp;</font>
@@ -282,6 +290,8 @@
                                                 <input type="number" style="text-align: center;width:140px;"
                                                     class="form-control" id="myinput" placeholder="input trx">
                                             </div>
+                                            <br>
+
                                             <div class="mbr-section-btn col-right align-center">
 
                                                 <a onclick="getcontent();"
@@ -292,7 +302,7 @@
                                         <br><br>
 
                                         <div class="mbr-section-btn col-right align-center">
-                                            <a onclick="getcash()" class="btn m-0 btn-secondary display-4">Claimable
+                                            <a onclick="getcash()" class="btn m-0 btn-secondary display-4">Claim
                                             </a>
                                         </div>
 
@@ -1245,7 +1255,7 @@
 
 
 <script language="javascript" type="text/javascript">
-    leftTimer(2021, 8, 11, 11, 11, 11);
+    leftTimer(2021, 06, 14, 00, 00, 00);
 
     function leftTimer(year, month, day, hour, minute, second) {
         var leftTime = (new Date(year, month - 1, day, hour, minute, second)) - (new Date()); //计算剩余的毫秒数
@@ -1260,7 +1270,7 @@
         document.getElementById("countdown").innerHTML = days + "：" + hours + "：" + minutes + "：" + seconds + "：";
     }
 
-    setInterval("leftTimer(2021,8,11,11,11,11)", 1000);
+    setInterval("leftTimer(2021,06,14,00,00,00)", 1000);
 
 
 

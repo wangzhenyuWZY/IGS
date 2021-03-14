@@ -171,7 +171,15 @@
                                                 href="https://tronscan.io/#/token20/TTSLeAmeyRWsRJfzwExQMM7EoS67nFnFUW"
                                                 target="_blank">InfinityStones </a></h4>
 
-                                        <p class="mbr-text mbr-fonts-style pt-3 display-4"><br>
+                                        <p class="mbr-text mbr-fonts-style col-right mbr-black align-center display-5">
+                                            <br><strong>Start In<br></strong><span id="poolsupply">
+                                                <font style="vertical-align: inherit;">
+                                                    <font style="vertical-align: inherit;">2021-03-16 09:00:00</font>
+                                                </font>
+                                            </span>
+                                        </p>
+
+                                        <p class="mbr-text mbr-fonts-style pt-3 display-4">
                                             <strong>
                                                 <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">矿池日奖励&nbsp;</font>
@@ -207,7 +215,7 @@
                                                     <font style="vertical-align: inherit;">-</font>
                                                 </font>
                                             </span> -->
-                                           
+
                                             <!-- <strong>
                                                 <font style="vertical-align: inherit;">
                                                     <font style="vertical-align: inherit;">价格</font>
@@ -222,7 +230,7 @@
                                                     <font style="vertical-align: inherit;">-</font>
                                                 </font>
                                             </span> -->
-                                          
+
                                             <!-- <font style="vertical-align: inherit;">
                                                 <font style="vertical-align: inherit;"> 原石/ Trx LP = $ </font>
                                             </font>
@@ -238,13 +246,13 @@
                                                 </font>
                                                 <br> <br>
                                             </strong>
-                                            
+
                                             <!-- <font style="vertical-align: inherit;">
                                                 <font style="vertical-align: inherit;"></font>
                                             </font><br> -->
                                             <font style="vertical-align: inherit;">
                                                 <font style="vertical-align: inherit;">每日ROI
-                                                    =&nbsp; 
+                                                    =&nbsp;
                                                 </font>
                                             </font>
                                             <span id="dailyroi">
@@ -257,7 +265,7 @@
                                             </font>
                                             <br> <br>
                                             <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">每周ROI  =&nbsp; </font>
+                                                <font style="vertical-align: inherit;">每周ROI =&nbsp; </font>
                                             </font>
                                             <span id="weeklyroi">
                                                 <font style="vertical-align: inherit;">
@@ -389,7 +397,7 @@
                                                 <font style="vertical-align: inherit;">美元</font>
                                             </font> -->
                                             <br><br>
-                                         
+
                                         </p>
                                     </div>
                                 </div>
@@ -412,9 +420,10 @@
                                         <div id="approvedyes" style="text-align: center">
                                             <div class="form-group"
                                                 style="text-align: center  ;  display: flex;justify-content: center;">
-                                                <input type="number" style="text-align: center;width:140px;"
-                                                    class="form-control" id="myinput" placeholder="请输入金额">
+                                                <input type="number" style="text-align: center;width:168px;"
+                                                    class="form-control" id="myinput" placeholder="输入金额">
                                             </div>
+                                            <br>
                                             <div class="mbr-section-btn col-right align-center">
 
                                                 <a onclick="getcontent();"
@@ -1319,7 +1328,7 @@
                 <div class="media-container-column col-12 col-lg-3 col-md-4">
                     <div class="mbr-section-btn align-left py-4" style="text-align: center;">
                         <a class="btn btn-success-outline display-4"
-                            href="https://tronscan.io/#/token20/TTSLeAmeyRWsRJfzwExQMM7EoS67nFnFUW" target="_blank" >ISC
+                            href="https://tronscan.io/#/token20/TTSLeAmeyRWsRJfzwExQMM7EoS67nFnFUW" target="_blank">ISC
                             Tronscan</a>
 
                         <!-- <a class="btn btn-danger-outline display-4" href="#"
@@ -1352,7 +1361,7 @@
 
 
 <script language="javascript" type="text/javascript">
-    leftTimer(2021, 8, 11, 11, 11, 11);
+    leftTimer(2021, 06, 14, 00, 00, 00);
 
     function leftTimer(year, month, day, hour, minute, second) {
         var leftTime = (new Date(year, month - 1, day, hour, minute, second)) - (new Date()); //计算剩余的毫秒数
@@ -1367,7 +1376,7 @@
         document.getElementById("countdown").innerHTML = days + "天" + hours + "小时" + minutes + "分" + seconds + "秒";
     }
 
-    setInterval("leftTimer(2021,8,11,11,11,11)", 1000);
+    setInterval("leftTimer(2021,06,14,00,00,00)", 1000);
 
 
 
@@ -1387,7 +1396,7 @@
         }
 
         if (window.tronWeb && window.tronWeb.defaultAddress.base58) {
-           
+
             try {
                 let contract = await
                     window.tronWeb.contract().at('TTSLeAmeyRWsRJfzwExQMM7EoS67nFnFUW');
@@ -1403,7 +1412,7 @@
                 console.log(error);
                 alert("Refuse to pay");
             }
-        }else {
+        } else {
             alert("Please unlock your Tron wallet to start interacting");
         }
 
