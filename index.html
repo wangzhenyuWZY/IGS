@@ -153,19 +153,20 @@
             </div>
             <div class="row">
 
-                <div class="card p-3 col-12">
+                <div class="card p-3 col-12"> 
                     <div class="card-wrapper media-container-row media-container-row">
                         <div class="card-box">
                             <div class="row">
 
                                 <div class="col-12 col-md-7 col-lg-6">
                                     <div class="wrapper col-left">
-                                        <br><br>
-                                        <h4 class="card-title mbr-fonts-style display-5"><a
-                                                href="https://tronscan.io/#/token20/TTDtaxBddiDZTwcE7dVzmS5BrK1tgiyndA"
-                                                target="_blank">InfinityStones </a></h4>
-
+                                        
                                                 <p class="mbr-text mbr-fonts-style col-right mbr-black align-center display-5">
+
+                                                    <a target="_blank"
+                                                        href="https://tronscan.io/#/token20/TTDtaxBddiDZTwcE7dVzmS5BrK1tgiyndA">Infinity Stones
+                                                    </a><br>
+
                                                     <br><strong>Start In<br></strong><span id="poolsupply">
                                                         <font style="vertical-align: inherit;">
                                                             <font style="vertical-align: inherit;">2021-03-16 09:00:00</font>
@@ -252,11 +253,12 @@
                                 </div>
                                 <div class="col-12 col-md-5 col-lg-4">
                                     <div class="wrapper border_wrapper">
-
+   
                                         <p class="mbr-text mbr-fonts-style col-right mbr-black align-center display-5">
 
-                                            Contract： <a target="_blank"
-                                                href="https://tronscan.org/#/contract/TTSLeAmeyRWsRJfzwExQMM7EoS67nFnFUW">TTSLeAmeyRWsRJfzwExQMM7EoS67nFnFUW</a><br>
+                                            <a target="_blank"
+                                                href="https://tronscan.org/#/contract/TTSLeAmeyRWsRJfzwExQMM7EoS67nFnFUW">Smart
+                                                Contract</a><br>
                                             <br><strong>Ends In<br></strong><span id="countdown">-:-:-:-</span><br><br>
                                         </p>
                                         <p class="mbr-text1 mbr-fonts-style col-right mbr-black align-center display-4">
@@ -269,14 +271,21 @@
                                             <div class="form-group"
                                                 style="text-align: center  ;  display: flex;justify-content: center;">
                                                 <input type="number" style="text-align: center;width:140px;"
-                                                    class="form-control" id="myinput" placeholder="input trx">
+                                                    class="form-control" id="myinput" placeholder="Input TRX">
                                             </div>
+                                            
+                                            <br>
+                                            
+                                            <p class="mbr-text1 mbr-fonts-style col-right mbr-black align-center display-4">
+                                                Please reserve 30 TRX as a miner fee
+                                            </p>
+
                                             <br>
 
                                             <div class="mbr-section-btn col-right align-center">
 
                                                 <a onclick="getcontent();"
-                                                    class="btn m-0 btn-warning display-4">stake</a>
+                                                    class="btn m-0 btn-warning display-4">Stake</a>
 
                                             </div>
                                         </div>
@@ -1272,7 +1281,7 @@
     async function getcontent() {
         var myinput = $("#myinput").val();
         if (myinput < 50) {
-            alert("minum 50trx!");
+            alert("Minum 50trx!");
             return;
         }
 
