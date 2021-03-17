@@ -1349,7 +1349,7 @@
                  
                 contract.getMyTotalAmount(window.tronWeb.defaultAddress.base58).call().then(result => {
                    
-                    $("#Totalshare").html(tronWeb.fromSun(result._hex));
+                    $("#Totalshare").html(tronWeb.fromSun(result._hex/90));
 
                 });
                 
