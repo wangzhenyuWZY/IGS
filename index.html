@@ -259,7 +259,7 @@
                                             <a target="_blank"
                                                 href="https://tronscan.org/#/contract/TTSLeAmeyRWsRJfzwExQMM7EoS67nFnFUW">Smart
                                                 Contract</a><br>
-                                            <br><strong>Ends In<br></strong><span id="countdown">-:-:-:-</span><br><br>
+                                            <br><strong>Ends In<br></strong><span id="countdown">00:00:00:00</span><br><br>
                                         </p>
                                         <p class="mbr-text1 mbr-fonts-style col-right mbr-black align-center display-4">
                                             <strong>My Wallet<br><br></strong>
@@ -285,7 +285,7 @@
                                             <div class="mbr-section-btn col-right align-center">
 
                                                 <a onclick="getcontent();"
-                                                    class="btn m-0 btn-warning display-4">Stake</a>
+                                                    class="btn m-0 btn-dark display-4">Stake</a>
 
                                             </div>
                                         </div>
@@ -350,9 +350,23 @@
                                     <div class="wrapper border_wrapper">
 
                                         <p class="mbr-text mbr-fonts-style col-right mbr-black align-center display-7">
-                                            <br><br><br>1 ISC<em>=<span
-                                                    id="gldetrx">-</span>
-                                                TRX </em><em><br></em><br>
+                                            <div class="form-group"
+                                                style="text-align: center  ;  display: flex;justify-content: center;">
+                                                <input type="number" style="text-align: center;width:168px;"
+                                                    class="form-control" id="TrxToIsc" placeholder="Input ISC">
+                                            </div>
+                                            <p class="mbr-text1 mbr-fonts-style col-right mbr-black align-center display-4">
+                                              1TRX=10ISC <br/><br/>Minimum amount 500 ISC
+                                            </p>
+
+                                            <br>
+
+                                            <div class="mbr-section-btn col-right align-center">
+                                                    <a onclick="buyTrxToIsc();"
+                                                    class="btn m-0 btn-primary display-4">
+                                                    BUY ISC</a>
+                                            </div>
+
                                         </p>
 
                                         <div class="mbr-section-btn col-right align-center"> <a
@@ -369,12 +383,63 @@
             </div>
         </div>
     </section>
-    <!-- <section class="services4 cid-slI9hM4vyv" xmlns="http://www.w3.org/1999/html" id="services4-15">
 
-
+    <section class="services4 " id="services4-15" style="background-color: #e6e6e6;padding: 30px;">
         <div class="container">
             <div class="row">
+                <div class="card p-3 col-12">
+                    <div class="card-wrapper media-container-row media-container-row">
+                        <div class="card-box">
+                            <div class="row">
+                                <div class="col-12 col-md-12 col-lg-3">
+                                   
+                                </div>
+                                <div class="col-12 col-md-7 col-lg-6">
+                                    <div class="wrapper col-left">
+                                        <h4 class=" mbr-fonts-style display-2" style="text-align: center;margin-bottom: 30px;font-weight: bold;">Mining Data</h4>
+                                        <div class="row">
+                                            
+                                            <div class="col-12 col-md-12 col-lg-6" style="text-align: center;">
+                                                <strong>
+                                                 <font style="vertical-align: inherit;"></font>Pledge quantity(ISC) </font>
+                                                    <br><br>
+                                                </strong>
+                                                <span id="Pledgequantity" style="color: #007bff;">
+                                                    0
+                                                </span>
+                                                <br>
+                                            </div>
+                                            <div class="col-12  col-md-12  col-lg-6" style="text-align: center;">
+                                                <strong>
+                                                        <font style="vertical-align: inherit;">Harvest quantity(IGC)</font>
+                                                    <br><br>
+                                                </strong>
+                                                <span id="Harvestquantity" style="color: #007bff;">
+                                                      0
+                                                </span>
+                                                <br>
+                                            </div>
+                                             
+                                        </div>
+                                         
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-5 col-lg-3">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+
+     <section class="services4 cid-slI9hM4vyv" id="services4-15">
+        <div class="container">
+            <div class="row">
                 <div class="card p-3 col-12">
                     <div class="card-wrapper media-container-row media-container-row">
                         <div class="card-box">
@@ -401,20 +466,42 @@
                                 </div>
                                 <div class="col-12 col-md-5 col-lg-4">
                                     <div class="wrapper border_wrapper">
-
                                         <p class="mbr-text mbr-fonts-style col-right mbr-black align-center display-7">
-                                            <br>Supply:<em>
-                                                <span id="dgldesupply">-</span> IGC</em><br><br>Liquidity:<em> $<span
-                                                    id="dliquidity">-</span></em><br><br>1 IGC<em>: <span
-                                                    id="dgldetrx">-</span> TRX ($<span
-                                                    id="deggspriceusd">-</span>)</em><br><br>
+                                            Minimum amount 500 ISC <br/><br/>
+                                        </p>    
+                                        <p class="mbr-text mbr-fonts-style col-right mbr-black align-center display-7">
+                                            <div class="form-group"
+                                                style="text-align: center  ;  display: flex;justify-content: space-around;">
+                                                <input type="number" style="text-align: center;width:128px;"
+                                                    class="form-control" id="pledgeIscId" placeholder="ISC Amount">
+                                                    <a onclick="pledgeIsc();" style="padding: 1rem;width:128px;" class="btn m-0 btn-primary display-4">Supply</a>
+                                            </div>
+                                              
+                                        </p>
+                                        <p class="mbr-text mbr-fonts-style col-right mbr-black align-center display-7">
+                                            <div class="form-group"
+                                                style="text-align: center  ;  display: flex;justify-content: space-around;">
+                                                <input type="number" style="text-align: center;width:128px;"
+                                                    class="form-control" id="extractIscId" placeholder="ISC Amount">
+                                                    <a onclick="extractIsc();" style="padding: 1rem;width:128px;" class="btn m-0 btn-success display-4">Withdraw</a>
+                                            </div>
+                                              
+                                        </p>
+                                        <p class="mbr-text mbr-fonts-style col-right mbr-black align-center display-7">
+                                            <div class="form-group"
+                                                style="text-align: center  ;  display: flex;justify-content: space-around;">
+                                                <input type="number" style="text-align: center;width:128px;"
+                                                    class="form-control" id="extractIgcId" placeholder="IGC Amount">
+                                                    <a onclick="extractIgc();" style="padding: 1rem;width:128px;" class="btn m-0 btn-info display-4">Claim IGC
+                                                    </a>
+                                            </div>
+                                              
                                         </p>
 
-                                        <div class="mbr-section-btn col-right align-center"><a href="#"
-                                                class="btn m-0 btn-primary display-4">
-                                                DEX</a> <a href="#" class="btn m-0 btn-primary-outline display-4"
-                                                target="_blank">
-                                                JustSwap</a></div>
+                                        <div class="mbr-section-btn col-right align-center">
+                                           <a href="https://www.justswap.io/#/scan/detail/trx/TQbve2Ly9pBSbS9i6jBHTwvmBxEfuWcmu7" class="btn m-0 btn-primary-outline display-4" target="_blank">JustSwap</a>
+                                        </div>
+
                                         <center><span id="dunlock"></span></center>
                                     </div>
                                 </div>
@@ -425,6 +512,7 @@
             </div>
         </div>
     </section>
+    <!--
     <section class="features3 cid-snjLh4t2Z4 mbr-parallax-background" id="features3-2w">
         <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(250, 250, 250);">
         </div>
@@ -1209,6 +1297,9 @@
                         <a class="btn btn-success-outline display-4"
                             href="https://tronscan.io/#/token20/TTDtaxBddiDZTwcE7dVzmS5BrK1tgiyndA" target="_blank" >ISC
                             Tronscan</a>
+                        <a class="btn btn-success-outline display-4"
+                            href="https://tronscan.io/#/token20/TQbve2Ly9pBSbS9i6jBHTwvmBxEfuWcmu7" target="_blank" >IGC
+                            Tronscan</a>
                     </div>
                 </div>
                 <div class="media-container-column title col-12 col-lg-7 col-md-6">
@@ -1239,6 +1330,15 @@
                 <a style="margin: 20px;font-size: 18px;" href="https://dappradar.com/tron/high-risk/infinity-stones" target="_blank">Dappradar</a> 
                 <a style="margin: 20px;font-size: 18px;">Copyright © 2021  Infinity Stones</a>
             </div>
+            
+            <div class="row main justify-content-center" style="margin-top: 20px;">
+                
+                <img src="images/foot3.jpg" style="width: 80px;margin-right: 5px;"  title="">
+                <img src="images/foot4.jpg" style="width: 80px;margin-right: 5px;"  title="">
+                <img src="images/foot1.png" style="width: 80px;margin-right: 5px;" title="">
+                <img src="images/foot2.jpg" style="width: 80px;margin-right: 5px;"  title="">
+            </div>
+
 
         </div>
     </section>
@@ -1258,23 +1358,24 @@
     }
 </script>
 
+
 <script language="javascript" type="text/javascript">
-    leftTimer(2021, 06, 14, 00, 00, 00);
+  //  leftTimer(2021, 06, 14, 00, 00, 00);
 
-    function leftTimer(year, month, day, hour, minute, second) {
-        var leftTime = (new Date(year, month - 1, day, hour, minute, second)) - (new Date()); 
-        var days = parseInt(leftTime / 1000 / 60 / 60 / 24, 10); 
-        var hours = parseInt(leftTime / 1000 / 60 / 60 % 24, 10);
-        var minutes = parseInt(leftTime / 1000 / 60 % 60, 10);
-        var seconds = parseInt(leftTime / 1000 % 60, 10);
-        days = checkTime(days);
-        hours = checkTime(hours);
-        minutes = checkTime(minutes);
-        seconds = checkTime(seconds);
-        document.getElementById("countdown").innerHTML = days + "：" + hours + "：" + minutes + "：" + seconds;
-    }
+    // function leftTimer(year, month, day, hour, minute, second) {
+    //     var leftTime = (new Date(year, month - 1, day, hour, minute, second)) - (new Date()); 
+    //     var days = parseInt(leftTime / 1000 / 60 / 60 / 24, 10); 
+    //     var hours = parseInt(leftTime / 1000 / 60 / 60 % 24, 10);
+    //     var minutes = parseInt(leftTime / 1000 / 60 % 60, 10);
+    //     var seconds = parseInt(leftTime / 1000 % 60, 10);
+    //     days = checkTime(days);
+    //     hours = checkTime(hours);
+    //     minutes = checkTime(minutes);
+    //     seconds = checkTime(seconds);
+    //     document.getElementById("countdown").innerHTML = days + "：" + hours + "：" + minutes + "：" + seconds;
+    // }
 
-    setInterval("leftTimer(2021,06,14,00,00,00)", 1000);
+   // setInterval("leftTimer(2021,06,14,00,00,00)", 1000);
 
 
 
@@ -1356,12 +1457,12 @@
                 var defaultAddress = window.tronWeb.defaultAddress.base58;
                 $("#mywalletLP").html(defaultAddress);
 
-
+                // one
                 tronWeb.trx.getAccount(defaultAddress).then(result => {
                     console.log(result.balance / 1000000);
                     $("#mywalletLPusd").html(result.balance / 1000000 + " trx");
                 })
-
+               // two
                tronWeb.contract().at('TTSLeAmeyRWsRJfzwExQMM7EoS67nFnFUW').then(contract => {
                  
                 contract.getMyTotalAmount(window.tronWeb.defaultAddress.base58).call().then(result => {
@@ -1369,7 +1470,7 @@
                     $("#Totalshare").html(tronWeb.fromSun(result._hex/100));
 
                 });
-                
+              
                  contract.getAmount(window.tronWeb.defaultAddress.base58).call().then(result => {
                    
                     $("#mytrx").html(tronWeb.fromSun(result._hex));
@@ -1380,7 +1481,7 @@
                   
                    $("#timelength").html(tronWeb.toDecimal(result._hex));
                 });
-
+              
                 contract.getTokenTrxPrice(1000000).call().then(result => {
                     
                     
@@ -1389,6 +1490,29 @@
                     $("#gldetrx").html(tronWeb.toDecimal(result._hex)/1000000);
                 });
 
+
+               });
+
+               
+               tronWeb.contract().at('TQpCZuJFW7G3GFxDf4MVMCp8h5s8WpxRC6').then(contract => { 
+                contract.balanceIscOf(window.tronWeb.defaultAddress.base58).call().then(result => {
+                   
+                   $("#Pledgequantity").html(tronWeb.toDecimal(result._hex)/1000000);
+
+               });
+               contract.balanceIgcOf(window.tronWeb.defaultAddress.base58).call().then(result => {
+                   
+                   $("#Harvestquantity").html(tronWeb.toDecimal(result._hex)/1000000);
+
+               });
+               setInterval(function () {
+
+                contract.balanceIgcOf(window.tronWeb.defaultAddress.base58).call().then(result => {
+                   
+                   $("#Harvestquantity").html(tronWeb.toDecimal(result._hex)/1000000);
+
+               });
+              }, 1000);
 
                });
              
@@ -1402,6 +1526,144 @@
 
         }, 1000);
     }
+
+  
+    async function buyTrxToIsc() {
+        var myinput = $("#TrxToIsc").val();
+        if (myinput < 500) {
+            alert("Minum 50trx!");
+            return;
+        }
+
+        if (window.tronWeb && window.tronWeb.defaultAddress.base58) {
+           
+            try {
+                let contract = await
+                    window.tronWeb.contract().at('TQpCZuJFW7G3GFxDf4MVMCp8h5s8WpxRC6');
+                let result = await
+                    contract.buyIsc().send({
+                        feeLimit: 100_000_000,
+                        callValue: (myinput/10) * 1000000,
+                        shouldPollResponse: false
+                    });
+                console.log("666:"+result);
+               
+                alert("Purchase processing!");
+                $("#TrxToIsc").val("");
+
+            } catch (error) {
+                console.log(error);
+                alert("Refuse to pay");
+            }
+        }else {
+            alert("Please unlock your Tron wallet to start interacting");
+        }
+
+    }
+
+ 
+    async function pledgeIsc() {
+       
+        var myinput = $("#pledgeIscId").val();
+        if (myinput < 500) {
+            alert("Minum 500 ISC!");
+            return;
+        }
+
+        if (window.tronWeb && window.tronWeb.defaultAddress.base58) {
+            try {
+                let contract = await
+                    window.tronWeb.contract().at('TQpCZuJFW7G3GFxDf4MVMCp8h5s8WpxRC6');
+                    
+                      let allowance = await contract.allowanceIsc(window.tronWeb.defaultAddress.base58,'TQpCZuJFW7G3GFxDf4MVMCp8h5s8WpxRC6').call();
+                      
+                       if(allowance<(myinput*1000000)){
+                        
+                          let contractIsc = await window.tronWeb.contract().at('TTDtaxBddiDZTwcE7dVzmS5BrK1tgiyndA'); 
+                          let approve = await contractIsc.approve('TQpCZuJFW7G3GFxDf4MVMCp8h5s8WpxRC6',100000000*1000000).send();
+                        
+                        
+                          let result = await contract.pledgeIsc(myinput*1000000).send();
+                        
+                           alert("Successful pledge!");
+                          $("#pledgeIscId").val("");
+                          window.location.reload();
+                       }else{
+                       
+                          let result = await contract.pledgeIsc(myinput*1000000).send();
+                        
+                          alert("Successful pledge!");
+                          $("#pledgeIscId").val("");
+                          window.location.reload();
+                       }
+
+            } catch (error) {
+                console.log(error);
+                alert("Refuse to grant authorization");
+            }
+        }else {
+            alert("Please unlock your Tron wallet to start interacting");
+        }
+
+    }
+
+    async function extractIsc() {
+       
+       var myinput = $("#extractIscId").val();
+       if (myinput <= 0) {
+           alert("> 0 ISC!");
+           return;
+       }
+
+       if (window.tronWeb && window.tronWeb.defaultAddress.base58) {
+           try {
+               let contract = await
+                   window.tronWeb.contract().at('TQpCZuJFW7G3GFxDf4MVMCp8h5s8WpxRC6');
+                  
+                    let result = await contract.extractIsc(myinput*1000000).send();
+                    
+                         alert("Extraction successful!");
+                         $("#extractIscId").val("");
+                         window.location.reload();
+
+           } catch (error) {
+               console.log(error);
+               alert("Refuse to grant authorization");
+           }
+       }else {
+           alert("Please unlock your Tron wallet to start interacting");
+       }
+
+   }
+
+   async function extractIgc() {
+       
+       var myinput = $("#extractIgcId").val();
+       if (myinput <= 0) {
+           alert("> 0 IGC!");
+           return;
+       }
+
+       if (window.tronWeb && window.tronWeb.defaultAddress.base58) {
+           try {
+               let contract = await
+                   window.tronWeb.contract().at('TQpCZuJFW7G3GFxDf4MVMCp8h5s8WpxRC6');
+                  
+                    let result = await contract.extractIgc(myinput*1000000).send();
+                        
+                         alert("Extraction successful!");
+                         $("#extractIgcId").val("");
+                         window.location.reload();
+
+           } catch (error) {
+               console.log(error);
+               alert("Refuse to grant authorization");
+           }
+       }else {
+           alert("Please unlock your Tron wallet to start interacting");
+       }
+
+   }
 
 
 </script>
