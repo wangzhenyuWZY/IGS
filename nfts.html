@@ -180,7 +180,7 @@
         methods: {
             async init(){
                 this.TOKENC = await window.tronWeb.contract().at(this.tokenAddr);
-                let balance = this.TOKENC.balanceOf(window.tronWeb.defaultAddress.base58).call()
+                let balance = await this.TOKENC.balanceOf(window.tronWeb.defaultAddress.base58).call()
                 this.balance = balance/Math.pow(10,6)
                 this.gemList.forEach((item,index) => {
                     this.getInfos(item,index)
