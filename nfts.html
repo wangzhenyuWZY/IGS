@@ -142,7 +142,7 @@
                     <p class="prices">预估收益    {{item.income}}IGC</p>
                     <p class="prices">当前轮次    {{item.rounds}}</p>
                     <p class="hoders">当前权益持有者： <span>{{item.holder}}</span></p>
-                    <el-button class="btn">立即抢购</el-button>
+                    <el-button class="btn" @click="toDoing(item)">{{ item.isApproved?'立即抢购':'授权' }}</el-button>
                 </div>
             </li>
         </ul>
@@ -159,7 +159,7 @@
         el: '#app',
         data: {
             TOKENC:null,
-            tokenAddr:'TK8wApG8g9bfoUSFuJi6YNfEtCVVH8Fsa4',
+            tokenAddr:'TVz98u3kqqkJQVM66poytXbi5gYRuMacSe',
             gemList:[
                 {
                     active:0,
@@ -171,7 +171,7 @@
                     rounds:0,
                     fee:0,
                     holder:'TDMAoKcmGy6qYAHin7fwVnwcuRP8X1ujhf',
-                    contract:'TMcSCMa6c5k9sV6V2MTq5ydMw4uMy5sZfd'
+                    contract:'TFMVNea6Y5q8jJGRiBBqfZNQgffLvzZp2A'
                 }
             ]
         },
@@ -183,16 +183,52 @@
                 })
             },
             async getInfos(item,index) {
-                debugger
                 let contract = await window.tronWeb.contract().at(item.contract);
                 item.cost = await contract['initialPrice']().call()
                 let price = await contract['calculatePayment']().call()
                 item.price = price[0]/Math.pow(10,6)
                 item.fee = price[1]/Math.pow(10,6)
-                item.income = price[0] + price[0]*0.05 - price[0]*0.01
+                item.income = parseFloat(price[0]) + parseFloat(price[0])*0.05 - parseFloat(price[0])*0.01
                 item.rounds = await contract['roundNumber']().call()
                 item.holder = await contract['EquityOwner']().call()
+                let approve = await this.TOKENC.allowance(window.tronWeb.defaultAddress.base58, item.contract).call()
+                item.isApproved = approve?true:false
                 this.$set(this.gemList,index,item)
+            },
+            async toDoing(item){
+                if(item.isApproved){
+                    this.deposit(item)
+                }else{
+                    this.doApprove(item)
+                }
+            },
+            async deposit(item){
+                let that = this
+                let contract = await window.tronWeb.contract().at(item.contract);
+                var functionSelector = 'buy()'
+                var parameter = []
+                const transaction = await window.tronWeb.transactionBuilder.triggerSmartContract(
+                    item.contract,
+                    functionSelector,
+                    { shouldPollResponse: true },
+                    parameter
+                )
+                window.tronWeb.trx
+                    .sign(transaction.transaction)
+                    .then(function(signedTransaction) {
+                    window.tronWeb.trx
+                        .sendRawTransaction(signedTransaction)
+                        .then(function(res) {
+                            that.$message.success('购买成功')
+                        })
+                    })
+            },
+            async doApprove(item){
+                this.TOKENC['approve'](item.contract, '100000000000000000000000000').send({ shouldPollResponse: false }).then((res) => {
+                    if (res) {
+                        item.isApproved = true
+                    }
+                })
             },
             initTronWeb() { // 初始化tronweb
                 return new Promise(function(resolve, reject) {
