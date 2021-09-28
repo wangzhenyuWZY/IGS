@@ -209,6 +209,10 @@
                 }
             },
             async deposit(item,index){
+                if(window.tronWeb.defaultAddress.base58 == item.holder){
+                    alert('本地址已经是权益持有者')
+                    return
+                }
                 let that = this
                 let contract = await window.tronWeb.contract().at(item.contract);
                 var functionSelector = 'buy()'
