@@ -190,10 +190,11 @@
                 let contract = await window.tronWeb.contract().at(item.contract);
                 item.cost = await contract['initialPrice']().call()
                 let price = await contract['calculatePayment']().call()
-                item.price = price[0]/Math.pow(10,6)
+                item.price = (price[0]/Math.pow(10,6)).toFixed(2)
                 item.fee = price[1]/Math.pow(10,6)
-                item.income = parseFloat(price[0]) + parseFloat(price[0])*0.05 - parseFloat(price[0])*0.01
+                item.income = ((parseFloat(price[0]) + parseFloat(price[0])*0.05 - parseFloat(price[0])*0.01)/Math.pow(10,6)).toFixed(2)
                 item.rounds = await contract['counter']().call()
+                item.rounds += 1
                 let holder = await contract['EquityOwner']().call()
                 item.holder = tronWeb.address.fromHex(holder)
                 let approve = await this.TOKENC.allowance(window.tronWeb.defaultAddress.base58, item.contract).call()
