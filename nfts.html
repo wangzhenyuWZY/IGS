@@ -177,14 +177,14 @@
         },
         methods: {
             async init(){
-                this.TOKENC = await window.tronWeb.contract().at('TTSLeAmeyRWsRJfzwExQMM7EoS67nFnFUW');
+                this.TOKENC = await window.tronWeb.contract().at(this.tokenAddr);
                 this.gemList.forEach((item,index) => {
                     this.getInfos(item,index)
                 })
             },
             async getInfos(item,index) {
                 debugger
-                let contract = await window.tronWeb.contract().at('TTSLeAmeyRWsRJfzwExQMM7EoS67nFnFUW');
+                let contract = await window.tronWeb.contract().at(item.contract);
                 item.cost = await contract['initialPrice']().call()
                 let price = await contract['calculatePayment']().call()
                 item.price = price[0]/Math.pow(10,6)
