@@ -142,7 +142,8 @@
                     <p class="prices">预估收益    {{item.income}}IGC</p>
                     <p class="prices">当前轮次    {{item.rounds}}</p>
                     <p class="hoders">当前权益持有者： <span>{{item.holder}}</span></p>
-                    <el-button class="btn" @click="toDoing(item)">{{ item.isApproved?'立即抢购':'授权' }}</el-button>
+                    <el-button class="btn" @click="toDoing(item,index)">{{ item.isApproved?'立即抢购':'授权' }}</el-button>
+                    <p class="prices">我的余额 {{balance}}</p>
                 </div>
             </li>
         </ul>
@@ -160,6 +161,7 @@
         data: {
             TOKENC:null,
             tokenAddr:'TVz98u3kqqkJQVM66poytXbi5gYRuMacSe',
+            balance:0,
             gemList:[
                 {
                     active:0,
@@ -170,7 +172,7 @@
                     income:0,
                     rounds:0,
                     fee:0,
-                    holder:'TDMAoKcmGy6qYAHin7fwVnwcuRP8X1ujhf',
+                    holder:'',
                     contract:'TFMVNea6Y5q8jJGRiBBqfZNQgffLvzZp2A'
                 }
             ]
@@ -178,6 +180,8 @@
         methods: {
             async init(){
                 this.TOKENC = await window.tronWeb.contract().at(this.tokenAddr);
+                let balance = this.TOKENC.balanceOf(window.tronWeb.defaultAddress.base58).call()
+                this.balance = balance/Math.pow(10,6)
                 this.gemList.forEach((item,index) => {
                     this.getInfos(item,index)
                 })
@@ -196,14 +200,14 @@
                 item.isApproved = parseInt(approve)?true:false
                 this.$set(this.gemList,index,item)
             },
-            async toDoing(item){
+            async toDoing(item,index){
                 if(item.isApproved){
-                    this.deposit(item)
+                    this.deposit(item,index)
                 }else{
-                    this.doApprove(item)
+                    this.doApprove(item,index)
                 }
             },
-            async deposit(item){
+            async deposit(item,index){
                 let that = this
                 let contract = await window.tronWeb.contract().at(item.contract);
                 var functionSelector = 'buy()'
@@ -224,10 +228,12 @@
                         })
                     })
             },
-            async doApprove(item){
+            async doApprove(item,index){
+                let that = this
                 this.TOKENC['approve'](item.contract, '100000000000000000000000000').send({ shouldPollResponse: false }).then((res) => {
                     if (res) {
                         item.isApproved = true
+                        that.$set(that.gemList,index,item)
                     }
                 })
             },
