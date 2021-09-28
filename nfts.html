@@ -133,7 +133,7 @@
     <section class="nftContainer" id="app">
         <ul class="nftProList">
             <li class="nftProItem" v-for="(item,index) in gemList" :key="index">
-                <img src="./images/PowerStone.jpg">
+                <img :src="item.img">
                 <div class="nftPanel">
                     <h2 class="names">{{item.name}}</h2>
                     <p class="infos">{{item.info}}</p>
@@ -173,7 +173,73 @@
                     rounds:0,
                     fee:0,
                     holder:'',
-                    contract:'TFMVNea6Y5q8jJGRiBBqfZNQgffLvzZp2A'
+                    img:'./images/PowerStone.jpg',
+                    contract:'TMXfNTGxUMyeh6QzjX7XX3pLhQeGkKs9VF'
+                },
+                {
+                    active:0,
+                    name:'空间宝石',
+                    info:'允许使用者瞬间达到任何位置，移动对象或者重新安排空间序列，最高效率达到无所不在',
+                    cost:0,
+                    price:0,
+                    income:0,
+                    rounds:0,
+                    fee:0,
+                    holder:'',
+                    img:'./images/SpaceStone.jpg',
+                    contract:'TQhQxEQN4FCJv28yiJqrtUjw29AafhMWjf'
+                },
+                {
+                    active:0,
+                    name:'时间宝石',
+                    info:'允许使用者完全控制过去、当下、未来的时间，时间旅行，加速时间，时间倒流，时间错乱，甚至可以使时间无限循环，最高效率达到无所不知',
+                    cost:0,
+                    price:0,
+                    income:0,
+                    rounds:0,
+                    fee:0,
+                    holder:'',
+                    img:'./images/TimeStone.jpg',
+                    contract:'TXmjUvyfbMPCZnZcQRWTZ3UwUvxwJ7wrXD'
+                },
+                {
+                    active:0,
+                    name:'现实宝石',
+                    info:'允许使用者无视科学定律，自行安排',
+                    cost:0,
+                    price:0,
+                    income:0,
+                    rounds:0,
+                    fee:0,
+                    holder:'',
+                    img:'./images/RealityStone.jpg',
+                    contract:'TCZxqtNU5JYPK5YtT14GmC2ssM8kkWKGLH'
+                },
+                {
+                    active:0,
+                    name:'心灵宝石',
+                    info:'宇宙意识的化身，可以使使用者提高心灵能力和进入其他所有存在的心灵之中',
+                    cost:0,
+                    price:0,
+                    income:0,
+                    rounds:0,
+                    fee:0,
+                    holder:'',
+                    img:'./images/MindeStone.jpg',
+                    contract:'TSBei9qpKu8KSD1hZgAA31qwTk62wqBmuh'
+                },
+                {
+                    active:0,
+                    name:'灵魂宝石',
+                    info:'可以偷窃，控制，改变对方的灵魂，且可以无中生有的创造灵魂',
+                    cost:0,
+                    price:0,
+                    income:0,
+                    rounds:0,
+                    fee:0,
+                    holder:'',
+                    img:'./images/SoulStone.jpg',
+                    contract:'TDbVS2weo2dMoGUXjpz8nDhj3xD6June3U'
                 }
             ]
         },
@@ -289,9 +355,12 @@
           display:flex;
           justify-content: space-between;
           align-items: center;
+          flex-wrap: wrap;
+          margin-top:40px;
       }
       .nftProItem {
           text-align:center;
+          margin-bottom:40px;
       }
       .nftProItem img{
           width:85px;
