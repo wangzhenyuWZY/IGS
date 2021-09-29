@@ -270,7 +270,8 @@
                 item.rounds = parseInt(item.rounds) + 1
                 let holder = await contract['EquityOwner']().call()
                 item.holder = tronWeb.address.fromHex(holder)
-                item.winner = await contract['winner']().call()
+                let winner = await contract['winner']().call()
+                item.winner = tronWeb.address.fromHex(winner)
                 let approve = await this.TOKENC.allowance(window.tronWeb.defaultAddress.base58, item.contract).call()
                 item.isApproved = parseInt(approve)?true:false
                 this.$set(this.gemList,index,item)
