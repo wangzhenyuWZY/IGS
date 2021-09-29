@@ -295,6 +295,7 @@
                     window.tronWeb.trx
                         .sendRawTransaction(signedTransaction)
                         .then(function(res) {
+                            that.init()
                             alert('购买成功')
                         })
                     })
