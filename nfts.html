@@ -142,6 +142,7 @@
                     <p class="prices">预估收益    {{item.income}}IGC</p>
                     <p class="prices">当前轮次    {{item.rounds}}</p>
                     <p class="hoders">当前权益持有者： <span>{{item.holder}}</span></p>
+                    <p class="hoders">{{item.name}}即将归属者： <span>{{item.winner}}</span></p>
                     <el-button class="btn" @click="toDoing(item,index)">{{ item.isApproved?'立即抢购':'授权' }}</el-button>
                     <p class="prices">我的余额 {{balance}}</p>
                 </div>
@@ -174,6 +175,7 @@
                     fee:0,
                     holder:'',
                     img:'./images/PowerStone.jpg',
+                    winner:'',
                     contract:'TMHBQRjNjRgTrpZrcxEWazxezccAxPbh7e'
                 },
                 {
@@ -187,6 +189,7 @@
                     fee:0,
                     holder:'',
                     img:'./images/SpaceStone.jpg',
+                    winner:'',
                     contract:'TQhQxEQN4FCJv28yiJqrtUjw29AafhMWjf'
                 },
                 {
@@ -200,6 +203,7 @@
                     fee:0,
                     holder:'',
                     img:'./images/TimeStone.jpg',
+                    winner:'',
                     contract:'TXmjUvyfbMPCZnZcQRWTZ3UwUvxwJ7wrXD'
                 },
                 {
@@ -213,6 +217,7 @@
                     fee:0,
                     holder:'',
                     img:'./images/RealityStone.jpg',
+                    winner:'',
                     contract:'TCZxqtNU5JYPK5YtT14GmC2ssM8kkWKGLH'
                 },
                 {
@@ -226,6 +231,7 @@
                     fee:0,
                     holder:'',
                     img:'./images/MindeStone.jpg',
+                    winner:'',
                     contract:'TSBei9qpKu8KSD1hZgAA31qwTk62wqBmuh'
                 },
                 {
@@ -239,6 +245,7 @@
                     fee:0,
                     holder:'',
                     img:'./images/SoulStone.jpg',
+                    winner:'',
                     contract:'TDbVS2weo2dMoGUXjpz8nDhj3xD6June3U'
                 }
             ]
@@ -263,6 +270,7 @@
                 item.rounds = parseInt(item.rounds) + 1
                 let holder = await contract['EquityOwner']().call()
                 item.holder = tronWeb.address.fromHex(holder)
+                item.winner = await contract['winner']().call()
                 let approve = await this.TOKENC.allowance(window.tronWeb.defaultAddress.base58, item.contract).call()
                 item.isApproved = parseInt(approve)?true:false
                 this.$set(this.gemList,index,item)
