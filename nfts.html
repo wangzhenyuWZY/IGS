@@ -130,25 +130,46 @@
         </div>
     </div>
 </section>
-    <section class="nftContainer" id="app">
-        <ul class="nftProList">
-            <li class="nftProItem" v-for="(item,index) in gemList" :key="index">
-                <img :src="item.img">
-                <div class="nftPanel">
-                    <h2 class="names">{{item.name}}</h2>
-                    <p class="infos">{{item.info}}</p>
-                    <p class="prices">初始售价    {{item.cost}}IGC</p>
-                    <p class="prices">当前售价    {{item.price}}IGC</p>
-                    <p class="prices">预估收益    {{item.income}}IGC</p>
-                    <p class="prices">当前轮次    {{item.rounds}}</p>
-                    <p class="hoders">当前权益持有者： <span>{{item.holder}}</span></p>
-                    <p class="hoders">{{item.name}}即将归属者： <span>{{item.winner}}</span></p>
-                    <el-button class="btn" @click="toDoing(item,index)">{{ item.isApproved?'立即抢购':'授权' }}</el-button>
-                    <p class="prices">我的余额 {{balance}}</p>
-                </div>
-            </li>
-        </ul>
-    </section>
+    <div class="igcCon" id="app">
+        <section class="nftContainer">
+            <ul class="nftProList">
+                <li class="nftProItem" v-for="(item,index) in gemList" :key="index">
+                    <img :src="item.img">
+                    <div class="nftPanel">
+                        <h2 class="names">{{item.name}}</h2>
+                        <p class="infos">{{item.info}}</p>
+                        <p class="prices">初始售价    {{item.cost}} IGC</p>
+                        <p class="prices">当前售价    {{item.price}} IGC</p>
+                        <p class="prices">预估收益    {{item.income}} IGC</p>
+                        <p class="prices">当前轮次    {{item.rounds}}</p>
+                        <p class="hoders">当前权益持有者： <span>{{item.holder}}</span></p>
+                        <p class="hoders">{{item.name}}即将归属者： <span>{{item.winner}}</span></p>
+                        <el-button class="btn" @click="toDoing(item,index)">{{ item.isApproved?'立即抢购':'授权' }}</el-button>
+                        <p class="prices">我的余额 {{balance}}</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <section class="purchesePanel">
+            <h2 class="purTitle">宝石回购</h2>
+            <div class="purListPanel">
+                <ul class="purList">
+                    <li class="purItem" v-for="(item,index) in gemList" :key="index">
+                        <h3 class="name">{{item.name}}</h3>
+                        <p class="price">回购价格  <span>{{item.purchase}} IGC</span></p>
+                        <el-button class="btn" @click="purGems">立即回购</el-button>
+                    </li>
+                </ul>
+                <img class="shoutao" src="./images/InfinityStones-Infographic-01-740x740.jpg">
+                <p class="shoutaoinfo">
+                    在集齐了六颗无限宝石后，将力量、时间、空间、灵魂、现实和心灵宝石镶嵌在无限手套上可以合成终极唯一版无限手套NFT，持有者可以当作收藏品长期持有，也可以将其在各大NFT收藏品平台出售。同时，智能合约永久性回购。
+                </p>
+                <p class="purprice">回购价格  <span>1000000 IGC</span></p>
+                <el-button class="btn" @click="purStones">立即回购</el-button>
+            </div>
+        </section>
+    </div>
+    
 
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -176,7 +197,8 @@
                     holder:'',
                     img:'./images/PowerStone.jpg',
                     winner:'',
-                    contract:'TMHBQRjNjRgTrpZrcxEWazxezccAxPbh7e'
+                    contract:'TMHBQRjNjRgTrpZrcxEWazxezccAxPbh7e',
+                    tokenId:10001
                 },
                 {
                     active:0,
@@ -190,7 +212,8 @@
                     holder:'',
                     img:'./images/SpaceStone.jpg',
                     winner:'',
-                    contract:'TQhQxEQN4FCJv28yiJqrtUjw29AafhMWjf'
+                    contract:'TQhQxEQN4FCJv28yiJqrtUjw29AafhMWjf',
+                    tokenId:10002
                 },
                 {
                     active:0,
@@ -204,7 +227,8 @@
                     holder:'',
                     img:'./images/TimeStone.jpg',
                     winner:'',
-                    contract:'TXmjUvyfbMPCZnZcQRWTZ3UwUvxwJ7wrXD'
+                    contract:'TXmjUvyfbMPCZnZcQRWTZ3UwUvxwJ7wrXD',
+                    tokenId:10003
                 },
                 {
                     active:0,
@@ -218,7 +242,8 @@
                     holder:'',
                     img:'./images/RealityStone.jpg',
                     winner:'',
-                    contract:'TCZxqtNU5JYPK5YtT14GmC2ssM8kkWKGLH'
+                    contract:'TCZxqtNU5JYPK5YtT14GmC2ssM8kkWKGLH',
+                    tokenId:10004
                 },
                 {
                     active:0,
@@ -232,7 +257,8 @@
                     holder:'',
                     img:'./images/MindeStone.jpg',
                     winner:'',
-                    contract:'TSBei9qpKu8KSD1hZgAA31qwTk62wqBmuh'
+                    contract:'TSBei9qpKu8KSD1hZgAA31qwTk62wqBmuh',
+                    tokenId:10005
                 },
                 {
                     active:0,
@@ -246,7 +272,8 @@
                     holder:'',
                     img:'./images/SoulStone.jpg',
                     winner:'',
-                    contract:'TDbVS2weo2dMoGUXjpz8nDhj3xD6June3U'
+                    contract:'TDbVS2weo2dMoGUXjpz8nDhj3xD6June3U',
+                    tokenId:10006
                 }
             ]
         },
@@ -272,6 +299,8 @@
                 item.holder = tronWeb.address.fromHex(holder)
                 let winner = await contract['winner']().call()
                 item.winner = tronWeb.address.fromHex(winner)
+                let purchase = await contract['repurchasePrice']().call()
+                item.purchase = (purchase/Math.pow(10,6)).toFixed(2)
                 let approve = await this.TOKENC.allowance(window.tronWeb.defaultAddress.base58, item.contract).call()
                 item.isApproved = parseInt(approve)?true:false
                 this.$set(this.gemList,index,item)
@@ -318,6 +347,12 @@
                     }
                 })
             },
+            purGems(){
+                alert('您未持有该宝石！')
+            },
+            purStones(){
+                alert('您未持有无限手套！')
+            },
             initTronWeb() { // 初始化tronweb
                 return new Promise(function(resolve, reject) {
                     const tries = 0
@@ -363,14 +398,14 @@
       }
       .nftProList{
           display:flex;
-          justify-content: space-between;
+          justify-content: center;
           align-items: center;
           flex-wrap: wrap;
           margin-top:40px;
       }
       .nftProItem {
           text-align:center;
-          margin-bottom:40px;
+          margin:0 20px 40px;
       }
       .nftProItem img{
           width:85px;
@@ -382,6 +417,7 @@
           border-radius:10px;
           padding:10px 20px 20px;
           width:300px;
+          height:520px;
       }
       .nftPanel .names{
           font-size:24px;
@@ -393,6 +429,7 @@
           font-size:14px;
           text-align:left;
           padding-bottom:30px;
+          height: 120px;
       }
       .nftPanel .prices{
           font-size:16px;
@@ -411,6 +448,77 @@
           height:45px;  
           margin-top:40px;
       }
+      .purchesePanel{
+          background:#fff;
+          text-align:center;
+      }
+      .shoutao{
+          width:320px;
+          margin-top:60px;
+      }
+      .shoutaoinfo{
+        font-size: 14px;
+        line-height: 18px;
+        text-align: left;
+        padding-top: 20px;
+        text-indent: 15px;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .purchesePanel .purListPanel .purList{
+          display:flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+      }
+      .purchesePanel .purTitle{
+          text-align:center;
+          padding:30px 0;
+      } 
+      .purchesePanel .purListPanel{
+          max-width:1200px;
+          padding:20px 10px;
+          box-sizing: border-box;
+          margin:0 auto;
+      }
+      .purprice{
+          margin-top:20px;
+      }
+      .purprice span{
+        color: #007bff;
+      }
+      .purchesePanel .btn{
+        height:36px;
+          background:#c79b00;
+          color:#fff;
+          margin:0 auto;
+      }
+      .purList .purItem{
+          margin-bottom:20px;
+      }
+      .purList .purItem .name{
+          font-size:20px;
+          color:#00ddc6;
+          font-weight:500;
+          padding-bottom:15px;
+          text-align:center;
+      }
+      .purList .purItem .price{
+          text-align: center;
+          color:#767676;
+          padding-bottom:10px;
+      }
+      .purList .purItem .price span{
+          color:#007bff;
+      }
+      .purList .purItem .btn{
+          height:36px;
+          background:#c79b00;
+          color:#fff;
+          margin:0 auto;
+      }
+
   </style>
 </body>
 </html>  
