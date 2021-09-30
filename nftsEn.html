@@ -97,9 +97,9 @@
                 </ul>
                 <div class="icons-menu">
 
-                    <a class="iconfont-wrapper" href="nftsEn.html"
+                    <a class="iconfont-wrapper" href="nfts.html"
                         style="font-size: 1.0rem; line-height: 35px; color: #3a3030!important;">
-                        English
+                        简体中文
                     </a>
                 </div>
             </div>
@@ -138,47 +138,47 @@
                     <div class="nftPanel">
                         <h2 class="names">{{item.name}}</h2>
                         <p class="infos">{{item.info}}</p>
-                        <p class="prices">初始售价    {{item.cost}} IGC</p>
-                        <p class="prices">当前售价    {{item.price}} IGC</p>
-                        <p class="prices">预估收益    {{item.income}} IGC</p>
-                        <p class="prices">奖池余额    {{item.reward}} IGC</p>
-                        <p class="prices">当前轮次    {{item.rounds}}</p>
-                        <p class="hoders">当前权益持有者： <span>{{item.holder}}</span></p>
-                        <p class="hoders">{{item.name}}即将归属者： <span>{{item.winner}}</span></p>
-                        <el-button class="btn" @click="toDoing(item,index)">{{ item.isApproved?'立即抢购':'授权' }}</el-button>
-                        <p class="prices">我的余额 {{balance}}</p>
+                        <p class="prices">Initial selling price    {{item.cost}} IGC</p>
+                        <p class="prices">Current selling price    {{item.price}} IGC</p>
+                        <p class="prices">Estimated income    {{item.income}} IGC</p>
+                        <p class="prices">Prize pool balance    {{item.reward}} IGC</p>
+                        <p class="prices">Current round    {{item.rounds}}</p>
+                        <p class="hoders">Current equity holders： <span>{{item.holder}}</span></p>
+                        <p class="hoders">{{item.name}}Belonging： <span>{{item.winner}}</span></p>
+                        <el-button class="btn" @click="toDoing(item,index)">{{ item.isApproved?'Buy Now':'Authorization' }}</el-button>
+                        <p class="prices">My balance {{balance}}</p>
                     </div>
                 </li>
             </ul>
         </section>
         <section class="purchesePanel">
-            <h2 class="purTitle">宝石回购</h2>
+            <h2 class="purTitle">Gem repurchase</h2>
             <div class="purListPanel">
                 <ul class="purList">
                     <li class="purItem" v-for="(item,index) in gemList" :key="index">
                         <img :src="item.hero">
                         <h3 class="name">{{item.heroName}}({{item.name}})</h3>
-                        <p class="price">回购价格  <span>{{item.purchase}} IGC</span></p>
-                        <el-button class="btn" @click="purGems(item,index)">{{item.isAllApproved?'立即回购':'授权'}}</el-button>
+                        <p class="price">Repurchase price  <span>{{item.purchase}} IGC</span></p>
+                        <el-button class="btn" @click="purGems(item,index)">{{item.isAllApproved?'Buy Now':'Authorization'}}</el-button>
                     </li>
                 </ul>
                 <img class="shoutao" src="./images/InfinityStones-Infographic-01-740x740.jpg">
                 <p class="shoutaoinfo">
-                    在集齐了六颗无限宝石后，将力量、时间、空间、灵魂、现实和心灵宝石镶嵌在无限手套上可以合成终极唯一版无限手套NFT，持有者可以当作收藏品长期持有，也可以将其在各大NFT收藏品平台出售。同时，智能合约永久性回购。
+                    After collecting the six infinite gems, inlay the power, time, space, soul, reality and mind gems on the infinite glove to synthesize the ultimate unique version of the infinite glove NFT. The holder can hold it as a collection for a long time. It can be sold on major NFT collectibles platforms. At the same time, the smart contract is permanently repurchased.
                 </p>
-                <p class="purprice">回购价格  <span>1000000 IGC</span></p>
-                <el-button class="btn" @click="purStones(item,index)">立即回购</el-button>
+                <p class="purprice">Repurchase price  <span>1000000 IGC</span></p>
+                <el-button class="btn" @click="purStones(item,index)">Repurchase</el-button>
             </div>
         </section>
         <section class="accountPanel">
-            <h2>我的NFT</h2>
+            <h2>My NFT</h2>
             <div class="myNftList">
                 <div class="myNftItem" v-for="(item,index) in myNft" :key="index">
                     <img :src="item.hero">
                     <h3 class="name">{{item.heroName}}({{item.name}})</h3>
                     <p class="tokenid">TokenId:{{item.tokenId}}</p>
                 </div>
-                <p class="nodata" v-show="myNft.length==0">暂无数据</p>
+                <p class="nodata" v-show="myNft.length==0">No data</p>
             </div>
         </section>
     </div>
@@ -205,27 +205,27 @@
             gemList:[
                 {
                     active:0,
-                    name:'力量宝石',
-                    heroName:'星爵',
-                    info:'借助力量宝石，使用者可以获得力量的增强。能力也可以集中形成强大的能量束形式。当与其他宝石结合使用时，整个宇宙中存储的所有能量都可以得到控制，从而赋予用户无限的力量。',
+                    name:'Power Stone',
+                    heroName:'Star-Lord',
+                    info:'with the power stone, the user gains enhanced power and stamina.energy can also be concentrated into the form of powerful energy beams.when combined with other stones, all energy that exists across the universe can be controlled, granting the user unlimited strength.',
                     cost:0,
                     price:0,
                     income:0,
                     rounds:0,
                     fee:0,
-                    reward:0,
                     holder:'',
                     img:'./images/PowerStone.jpg',
                     hero:'./images/NFTSz/stor.jpg',
                     winner:'',
+                    reward:0,
                     contract:'TPcnwuBfA8C2rvWAChLunfR3tNa7sfmNgN',
                     tokenIds:[10001,10002,10003,10004,10005,10006,10007,10008,10009,10010]
                 },
                 {
                     active:0,
-                    name:'空间宝石',
-                    heroName:'美国队长',
-                    info:'空间宝石赋予使用者操作空间的能力，从而可以跨越整个宇宙传送，甚至可以变换成其他维度。不管物理定律如何，都可以制造虫洞并控制重力。',
+                    name:'Space Stone',
+                    heroName:'Captain Britain',
+                    info:'the space stone grants the user the ability to manipulate space in ways that allow teleportation across the universe, even into alternate dimensions.one could also create wormholes and manipulate gravity, regardless of the laws of physics.',
                     cost:0,
                     price:0,
                     income:0,
@@ -241,9 +241,9 @@
                 },
                 {
                     active:0,
-                    name:'时间宝石',
-                    heroName:'奇异博士',
-                    info:'时间宝石赋予了使用者对时间的完全控制权。一个人可以停止，倒退，加快时间，观察未来的情景。但是，宝石需要聪明和拥有高超科技的使用者。因为对时间连续性的不计后果的操纵可能会导致灾难。',
+                    name:'Time Stone',
+                    heroName:'Doctor Strange',
+                    info:'the time stone grants complete control over time.one could stop,rewind,speed up time, and observe visions of the future.however, the stone requires an intelligent and highly skilled user,as reckless manipulation of the time continuum could result in disater.',
                     cost:0,
                     price:0,
                     income:0,
@@ -259,9 +259,9 @@
                 },
                 {
                     active:0,
-                    name:'现实宝石',
-                    heroName:'雷神',
-                    info:'这款宝石可以改变现实。力量包括创造幻觉，操纵环境，改变物体，甚至访问替代宇宙的现实。与其他宝石结合使用时，现实改变能力会增强。',
+                    name:'Reality Stone',
+                    heroName:'Thor',
+                    info:'this stone allows the ability to alter reality.powers include creating illusions,manipulating environments, transmuting objects, and even accessing the realities of alternate universes.reality altering abilities increase in power when combined with other stones.',
                     cost:0,
                     price:0,
                     income:0,
@@ -277,9 +277,9 @@
                 },
                 {
                     active:0,
-                    name:'心灵宝石',
-                    heroName:'幻视',
-                    info:'心灵宝石赋予使用者心灵感应，远程控制，高智能的梦幻操纵和思想控制能力。宝石甚至能够在人造生物中产生感知，如亲眼所见一般显示在眼前。与其他宝石结合使用时，用户可以操纵整个宇宙中的所有思维。',
+                    name:'Minde Stone',
+                    heroName:'Vision',
+                    info:'the mind stone grants the user powers of telepathy,telekinesis,high intelligence,dream manipulation,and mind control.the stone is even able to create sentience in artificial beings,as shown with vision in the acu.when combined with all other stones, the user can manipulate all minds across the entire universe.',
                     cost:0,
                     price:0,
                     income:0,
@@ -295,16 +295,16 @@
                 },
                 {
                     active:0,
-                    name:'灵魂宝石',
-                    heroName:'钢铁侠',
-                    info:'灵魂宝石使得使用者有能力操纵生与死。灵魂也会被困在灵魂宝石中。当结合其他宝石的力量时候，授予使用者剥夺生命的控制权“快门”。',
+                    name:'Soul Stone',
+                    heroName:'Iron Man',
+                    info:'this stone allows the ability to manipulate life and death.souls could also be trapped within the stone, in what was called the "soul world".when combined with the power of the other stones.the user is granted control over all life, allowing thanos infamous "snap".',
                     cost:0,
                     price:0,
                     income:0,
                     rounds:0,
                     fee:0,
-                    reward:0,
                     holder:'',
+                    reward:0,
                     img:'./images/SoulStone.jpg',
                     hero:'./images/NFTSz/ironman.jpg',
                     winner:'',
@@ -378,11 +378,11 @@
             },
             async deposit(item,index){
                 if(item.roundNumber > item.endRound){
-                    alert('今日活动已结束')
+                    alert('The event is over')
                     return
                 }
                 if(window.tronWeb.defaultAddress.base58 == item.holder){
-                    alert('本地址已经是权益持有者')
+                    alert('This address is already an equity holder')
                     return
                 }
                 let that = this
@@ -402,7 +402,7 @@
                         .sendRawTransaction(signedTransaction)
                         .then(function(res) {
                             that.init()
-                            alert('购买成功')
+                            alert('Successful purchase')
                         })
                     })
             },
@@ -454,11 +454,11 @@
                             .sendRawTransaction(signedTransaction)
                             .then(function(res) {
                                 that.init()
-                                alert('回购成功')
+                                alert('Repurchase success')
                             })
                         })
                 }else{
-                    alert('您未持有该宝石！')
+                    alert('You do not own the gem!')
                 }
             },
             initTronWeb() { // 初始化tronweb
@@ -536,7 +536,8 @@
           font-size:14px;
           text-align:left;
           padding-bottom:30px;
-          height: 120px;
+          height: 170px;
+          line-height: 18px;
       }
       .nftPanel .prices{
           font-size:16px;
