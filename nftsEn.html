@@ -130,11 +130,11 @@
         </div>
     </div>
 </section>
-    <div class="igcCon" id="app">
+    <div class="igcCon" id="app" v-clock>
         <div class="advert-top" v-if="text">
             <div class="ico-horn">
                 <!-- 喇叭图标 -->
-                <img src="./images/laba.jpeg" alt="">
+                <img :src="icon" alt="">
             </div>
             <!-- 滚动文字区域 -->
             <div class="marquee-wrap">
@@ -216,6 +216,7 @@
             myNft:[],
             myNftTokenIds:[],
             text:'The Avengers 3.0 Officially Launched',
+            icon:'./images/laba.jpeg',
             gemList:[
                 {
                     active:0,
@@ -528,6 +529,9 @@
       })
   </script>
   <style>
+     [v-clock]{
+          display:none;
+      }
       body{
           background:#efefef;
       }
